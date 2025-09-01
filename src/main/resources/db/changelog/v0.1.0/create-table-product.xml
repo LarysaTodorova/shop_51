@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.6.xsd">
+
+    <changeSet id="create-table-product" author="Lora">
+
+        <createTable tableName="product">
+            <!--   Соответствует типу Long в Java. Мы хотим, чтобы база занималась генерацией Id -->
+            <column name="id" type="bigint" autoIncrement="true">
+                <!-- Constrains - ограничения. Допустимость пустых ячеек, уникальность-->
+                <!-- В том числе мы можем указать, что это Первичный ключ-->
+                <constraints primaryKey="true"/>
+            </column>
+
+            <column name="title" type="varchar(64)">
+                <constraints nullable="false" unique="true"/>
+            </column>
+
+            <column name="price" type="decimal(7,2)">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="active" type="boolean">
+                <constraints nullable="false"/>
+            </column>
+
+        </createTable>
+
+    </changeSet>
+
+</databaseChangeLog>
