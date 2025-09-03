@@ -18,26 +18,26 @@ public class CustomerController {
 
     @PostMapping
     public Customer saveCustomer(@RequestBody Customer customer) {
-        return customer;
+        return customerService.saveCustomer(customer);
     }
 
     @GetMapping("/{id}")
     public Customer getById(@PathVariable Long id) {
-        return null;
+        return customerService.getCustomerById(id);
     }
 
     @GetMapping
     public List<Customer> getAllCustomers() {
-        return List.of();
+        return customerService.getAllActiveCustomers();
     }
 
     @PutMapping("/{id}")
     public Customer updateCustomer(@PathVariable Long id, @RequestBody Customer customer) {
-        return new Customer();
+        return customerService.updateCustomer(id, customer);
     }
 
     @DeleteMapping("/{customerId}")
     public Customer remove(@PathVariable("customerId") Long id) {
-        return null;
+        return customerService.deleteCustomerById(id);
     }
 }
