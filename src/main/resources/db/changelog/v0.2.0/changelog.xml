@@ -9,6 +9,6 @@
         <tagDatabase tag="v.0.2.0"/>
     </changeSet>
 
-    <include file="create-table-consumer.xml" relativeToChangelogFile="true"/>
+    <include file="create-table-customer.xml" relativeToChangelogFile="true"/>
 
 </databaseChangeLog>
