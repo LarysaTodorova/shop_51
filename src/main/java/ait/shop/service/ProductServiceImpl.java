@@ -1,6 +1,7 @@
 package ait.shop.service;
 
 import ait.shop.model.entity.Product;
+import ait.shop.repository.ProductRepository;
 import ait.shop.service.interfaces.ProductService;
 import org.springframework.stereotype.Service;
 
@@ -10,19 +11,36 @@ import java.util.List;
 @Service
 public class ProductServiceImpl implements ProductService {
 
+    private final ProductRepository repository;
+
+    public ProductServiceImpl(ProductRepository repository) {
+        this.repository = repository;
+    }
+
+
     @Override
     public Product saveProduct(Product product) {
-        return null;
+        product.setActive(true);
+        return repository.save(product);
     }
 
     @Override
     public Product getById(Long id) {
-        return null;
+        Product product = repository.findById(id).orElse(null);
+        if (product == null || !product.isActive()) return null;
+
+        // true || ? -> true
+        // true | NPE -> true
+        // true || ? ->
+
+        return product;
     }
 
     @Override
     public List<Product> getAllActiveProducts() {
-        return List.of();
+        return repository.findAll().stream()
+                .filter(Product::isActive)
+                .toList();
     }
 
     @Override

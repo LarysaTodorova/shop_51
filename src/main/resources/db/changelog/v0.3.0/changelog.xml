@@ -5,9 +5,11 @@
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.6.xsd">
 
+    <changeSet id="add-tag-0.3.0" author="Lora">
+        <tagDatabase tag="v.0.3.0"/>
+    </changeSet>
 
-    <include file="v0.1.0/changelog.xml" relativeToChangelogFile="true"/>
-    <include file="v0.2.0/changelog.xml" relativeToChangelogFile="true"/>
-    <include file="v0.3.0/changelog.xml" relativeToChangelogFile="true"/>
+    <include file="create-table-cart.xml" relativeToChangelogFile="true"/>
+    <include file="create-foreign-rey-cart-to-customer.xml" relativeToChangelogFile="true"/>
 
 </databaseChangeLog>
