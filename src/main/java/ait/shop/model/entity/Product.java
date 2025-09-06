@@ -21,11 +21,12 @@ public class Product {
     @Column(name = "title")
     private String title;
 
-    @Schema(description = "Product price", example = "8.50")
+    @Schema(description = "Product price", example = "3.50")
     @Column(name = "price")
     private BigDecimal price;
 
     // CreatedAt -> created_at
+    @Schema(description = "Is product available", accessMode = Schema.AccessMode.READ_ONLY)
     @Column
     private boolean active;
 

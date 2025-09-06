@@ -17,7 +17,7 @@ import java.util.List;
 // http://localhost:8080/api/products
 @RestController
 @RequestMapping("/products")
-@Tag(name = "Product Controller", description = "Controller with operations with products")
+@Tag(name = "Product Controller", description = "Controller for operations with products")
 public class ProductController {
 
     public final ProductService service;
@@ -27,10 +27,10 @@ public class ProductController {
     }
 
     // POST /products
-    @Operation(summary = "Create product", description = "Add new product.", tags = { "Product" })
-    @ApiResponses(value = { @ApiResponse(responseCode = "200", description = "successful operation",
-            content = { @Content(mediaType = "application/json", schema = @Schema(implementation = Product.class)),
-                    @Content(mediaType = "application/xml", schema = @Schema(implementation = Product.class)) }) })
+    @Operation(summary = "Create product", description = "Add new product.", tags = {"Product"})
+    @ApiResponses(value = {@ApiResponse(responseCode = "200", description = "successful operation",
+            content = {@Content(mediaType = "application/json", schema = @Schema(implementation = Product.class)),
+                    @Content(mediaType = "application/xml", schema = @Schema(implementation = Product.class))})})
 
     @PostMapping
     public Product saveProduct(@Parameter(description = "Create product object") @RequestBody Product product) {
