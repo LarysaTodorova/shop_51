@@ -10,6 +10,6 @@
     </changeSet>
 
     <include file="create-table-cart.xml" relativeToChangelogFile="true"/>
-    <include file="create-foreign-rey-cart-to-customer.xml" relativeToChangelogFile="true"/>
+    <include file="create-foreign-key-cart-to-customer.xml" relativeToChangelogFile="true"/>
 
 </databaseChangeLog>
