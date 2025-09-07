@@ -13,7 +13,7 @@ public interface CustomerService {
 
     List<Customer> getAllActiveCustomers();
 
-    Customer getCustomerById(Long id);
+    Customer getActiveCustomerById(Long id);
 
     Customer updateCustomer(Long id, Customer customer);
 
@@ -33,6 +33,6 @@ public interface CustomerService {
 
     Product deleteProductFromCustomersBucket(Long customerId, Long productId);
 
-    void deleteAllProductsFromActiveCustomersBucket(Long customerId);
+    List<Product> deleteAllProductsFromActiveCustomersBucket(Long customerId);
 
 }

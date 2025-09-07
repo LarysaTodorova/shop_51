@@ -1,11 +1,22 @@
 package ait.shop.model.entity;
 
+import jakarta.persistence.*;
+
 import java.util.Objects;
 
+@Entity
+@Table(name = "customer")
 public class Customer {
 
+    @Id
+    @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Column(name = "name")
     private String name;
+
+    @Column
     private boolean active;
 
     public Long getId() {
@@ -46,7 +57,7 @@ public class Customer {
 
     @Override
     public String toString() {
-       return String.format("Customer: id - %d, name - '%s', active - %s}",
-               id, name, active ? "yes" : "no");
+        return String.format("Customer: id - %d, name - '%s', active - %s}",
+                id, name, active ? "yes" : "no");
     }
 }
