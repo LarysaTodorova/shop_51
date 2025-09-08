@@ -1,21 +1,26 @@
 package ait.shop.model.entity;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.*;
 
 import java.util.Objects;
 
 @Entity
 @Table(name = "customer")
+@Schema(description = "Class that describes Customer")
 public class Customer {
 
+    @Schema(description = "Customer unique identifier", example = "555", accessMode = Schema.AccessMode.READ_ONLY)
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Schema(description = "Customer name", example = "Luisa")
     @Column(name = "name")
     private String name;
 
+    @Schema(description = "Is customer available", accessMode = Schema.AccessMode.READ_ONLY)
     @Column
     private boolean active;
 

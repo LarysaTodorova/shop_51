@@ -3,6 +3,13 @@ package ait.shop.controller;
 import ait.shop.model.entity.Customer;
 import ait.shop.model.entity.Product;
 import ait.shop.service.interfaces.CustomerService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.Parameter;
+import io.swagger.v3.oas.annotations.media.Content;
+import io.swagger.v3.oas.annotations.media.Schema;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.web.bind.annotation.*;
 
 import java.math.BigDecimal;
@@ -10,6 +17,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/customers")
+@Tag(name = "Customer Controller", description = "Controller for operation with customers")
 public class CustomerController {
 
     public final CustomerService customerService;
@@ -18,8 +26,12 @@ public class CustomerController {
         this.customerService = customerService;
     }
 
+    @Operation(summary = "Create customer", description = "Add new customer.", tags = {"Customer"})
+    @ApiResponses(value = {@ApiResponse(responseCode = "200", description = "successful operation",
+            content = {@Content(mediaType = "application/json", schema = @Schema(implementation = Customer.class)),
+                    @Content(mediaType = "application/xml", schema = @Schema(implementation = Customer.class))})})
     @PostMapping
-    public Customer saveCustomer(@RequestBody Customer customer) {
+    public Customer saveCustomer(@Parameter(description = "Create customer object") @RequestBody Customer customer) {
         return customerService.saveCustomer(customer);
     }
 
