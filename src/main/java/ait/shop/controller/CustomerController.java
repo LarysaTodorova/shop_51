@@ -35,6 +35,13 @@ public class CustomerController {
         return customerService.saveCustomer(customer);
     }
 
+    @Operation(summary = "Get customer by Id", tags = {"Customer"})
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "successful operation",
+                    content = {@Content(mediaType = "application/json", schema = @Schema(implementation = Customer.class)),
+                            @Content(mediaType = "application/xml", schema = @Schema(implementation = Customer.class))}),
+            @ApiResponse(responseCode = "400", description = "Invalid customer Id supplied", content = @Content),
+            @ApiResponse(responseCode = "404", description = "Customer not found", content = @Content)})
     @GetMapping("/{id}")
     public Customer getById(@PathVariable Long id) {
         return customerService.getActiveCustomerById(id);
