@@ -1,6 +1,6 @@
 package ait.shop.controller;
 
-import ait.shop.model.entity.Product;
+import ait.shop.model.dto.ProductDTO;
 import ait.shop.service.interfaces.ProductService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
@@ -29,50 +29,58 @@ public class ProductController {
     // POST /products
     @Operation(summary = "Create product", description = "Add new product.", tags = {"Product"})
     @ApiResponses(value = {@ApiResponse(responseCode = "200", description = "successful operation",
-            content = {@Content(mediaType = "application/json", schema = @Schema(implementation = Product.class)),
-                    @Content(mediaType = "application/xml", schema = @Schema(implementation = Product.class))})})
+            content = {@Content(mediaType = "application/json", schema = @Schema(implementation = ProductDTO.class)),
+                    @Content(mediaType = "application/xml", schema = @Schema(implementation = ProductDTO.class))})})
 
     @PostMapping
-    public Product saveProduct(@Parameter(description = "Create product object") @RequestBody Product product) {
+    public ProductDTO saveProduct(@Parameter(description = "Create product object") @RequestBody ProductDTO productDto) {
         // обращаемся к сервису для сохранения продукта
-        return service.saveProduct(product);
+        return service.saveProduct(productDto);
     }
 
     // GET /products?id=3
+    @Operation(summary = "Get product by id", description = "Get product by id.", tags = {"Product"})
+    @ApiResponses(value = {@ApiResponse(responseCode = "200", description = "successful operation",
+            content = {@Content(mediaType = "application/json", schema = @Schema(implementation = ProductDTO.class)),
+                    @Content(mediaType = "application/xml", schema = @Schema(implementation = ProductDTO.class))}),
+            @ApiResponse(responseCode = "400", description = "Invalid API supplied", content = @Content),
+            @ApiResponse(responseCode = "404", description = "Product not found", content = @Content)
+
+    })
     @GetMapping("/{id}")
-    public Product detById(@PathVariable Long id) {
-        // обращаемся к сервису и запрашиваем продукт по id
+    public ProductDTO detById(@Parameter(description = "The id that needs to be fetched.", required = true)
+                           @PathVariable Long id) {
         return service.getById(id);
     }
 
     @GetMapping()
-    public List<Product> detAll() {
+    public List<ProductDTO> detAll() {
         // обращаемся к сервису и запрашиваем все продукты
         return service.getAllActiveProducts();
     }
 
     // Update: PUT -> /products/id и в теле поля, которое мы хотим поменять
     @PutMapping("/{id}")
-    public Product updateProduct(@PathVariable Long id, @RequestBody Product product) {
+    public ProductDTO updateProduct(@PathVariable Long id, @RequestBody ProductDTO productDto) {
         // обращаемся к сервису для обновления
-        return service.update(id, product);
+        return service.update(id, productDto);
     }
 
     //DELETE -> DELETE products/id
     @DeleteMapping("/{productId}")
-    public Product remove(@PathVariable("productId") Long id) {
+    public ProductDTO remove(@PathVariable("productId") Long id) {
         // обращаемся к сервису для удаления
         return service.deleteProduct(id);
     }
 
     //DELETE -> DELETE products/by-title?title=Banana
     @DeleteMapping("/by-title")
-    public Product removeByTitle(@RequestParam String title) {
+    public ProductDTO removeByTitle(@RequestParam String title) {
         return service.deleteByTitle(title);
     }
 
     @PutMapping("/restore/{id}")
-    public Product restoreProduct(@PathVariable Long id) {
+    public ProductDTO restoreProduct(@PathVariable Long id) {
         return service.restoreProductById(id);
     }
 

@@ -73,7 +73,7 @@ public class CustomerController {
     }
 
     @GetMapping("/active-count")
-    public long getActiveCountCustomer() {
+    public long getActiveCustomerCount() {
         return customerService.getAllActiveCustomerCount();
     }
 
@@ -87,7 +87,7 @@ public class CustomerController {
         return customerService.getAverageBucketPriceFromActiveCustomers(id);
     }
 
-    @PutMapping("/restore-bucket/{customerId}/{productId}")
+    @PutMapping("/bucket/{customerId}/{productId}")
     public Product addProductInCustomerBucket(@PathVariable Long customerId, @PathVariable Long productId) {
         return customerService.addProductInCustomersBucketIfActive(customerId, productId);
     }
