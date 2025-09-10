@@ -25,7 +25,7 @@ public class CustomerServiceImpl implements CustomerService {
     @Override
     public CustomerDTO saveCustomer(CustomerDTO customerDTO) {
         Customer customer = mapper.mapDtoToEntity(customerDTO);
-        customer.setActive(true);
+       // customer.setActive(true);
         return mapper.mapEntityToDto(repository.save(customer));
     }
 
