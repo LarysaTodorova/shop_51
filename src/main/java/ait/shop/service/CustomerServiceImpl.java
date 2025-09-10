@@ -1,9 +1,11 @@
 package ait.shop.service;
 
+import ait.shop.model.dto.CustomerDTO;
+import ait.shop.model.dto.ProductDTO;
 import ait.shop.model.entity.Customer;
-import ait.shop.model.entity.Product;
 import ait.shop.repository.CustomerRepository;
 import ait.shop.service.interfaces.CustomerService;
+import ait.shop.service.mapping.CustomerMappingService;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
@@ -13,49 +15,53 @@ import java.util.List;
 public class CustomerServiceImpl implements CustomerService {
 
     private final CustomerRepository repository;
+    private final CustomerMappingService mapper;
 
-    public CustomerServiceImpl(CustomerRepository repository) {
+    public CustomerServiceImpl(CustomerRepository repository, CustomerMappingService mapper) {
         this.repository = repository;
+        this.mapper = mapper;
     }
 
     @Override
-    public Customer saveCustomer(Customer customer) {
+    public CustomerDTO saveCustomer(CustomerDTO customerDTO) {
+        Customer customer = mapper.mapDtoToEntity(customerDTO);
         customer.setActive(true);
-        return repository.save(customer);
+        return mapper.mapEntityToDto(repository.save(customer));
     }
 
     @Override
-    public List<Customer> getAllActiveCustomers() {
+    public List<CustomerDTO> getAllActiveCustomers() {
         return repository.findAll().stream()
                 .filter(Customer::isActive)
+                .map(mapper::mapEntityToDto)
                 .toList();
     }
 
     @Override
-    public Customer getActiveCustomerById(Long id) {
+    public CustomerDTO getActiveCustomerById(Long id) {
         Customer customer = repository.findById(id).orElse(null);
         if (customer == null || !customer.isActive()) return null;
 
-        return customer;
+        return mapper.mapEntityToDto(customer);
     }
 
     @Override
-    public Customer updateCustomer(Long id, Customer customer) {
+    public CustomerDTO updateCustomer(Long id, CustomerDTO customerDTO) {
         return null;
     }
 
     @Override
-    public Customer deleteCustomerById(Long id) {
+    public CustomerDTO deleteCustomerById(Long id) {
         return null;
     }
 
     @Override
-    public Customer deleteCustomerByName(String name) {
+    public CustomerDTO deleteCustomerByName(String name) {
         return null;
     }
 
     @Override
-    public Customer restoreCustomerById(Long id) {
+    public CustomerDTO restoreCustomerById(Long id) {
         return null;
     }
 
@@ -75,17 +81,17 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     @Override
-    public Product addProductInCustomersBucketIfActive(Long customerId, Long productId) {
+    public ProductDTO addProductInCustomersBucketIfActive(Long customerId, Long productId) {
         return null;
     }
 
     @Override
-    public Product deleteProductFromCustomersBucket(Long customerId, Long productId) {
+    public ProductDTO deleteProductFromCustomersBucket(Long customerId, Long productId) {
         return null;
     }
 
     @Override
-    public List<Product> deleteAllProductsFromActiveCustomersBucket(Long customerId) {
+    public List<ProductDTO> deleteAllProductsFromActiveCustomersBucket(Long customerId) {
         return List.of();
     }
 

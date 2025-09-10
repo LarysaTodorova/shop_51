@@ -1,27 +1,26 @@
 package ait.shop.service.interfaces;
 
-import ait.shop.model.entity.Customer;
-import ait.shop.model.entity.Product;
-import org.springframework.stereotype.Service;
+import ait.shop.model.dto.CustomerDTO;
+import ait.shop.model.dto.ProductDTO;
 
 import java.math.BigDecimal;
 import java.util.List;
 
 public interface CustomerService {
 
-    Customer saveCustomer(Customer customer);
+    CustomerDTO saveCustomer(CustomerDTO customer);
 
-    List<Customer> getAllActiveCustomers();
+    List<CustomerDTO> getAllActiveCustomers();
 
-    Customer getActiveCustomerById(Long id);
+    CustomerDTO getActiveCustomerById(Long id);
 
-    Customer updateCustomer(Long id, Customer customer);
+    CustomerDTO updateCustomer(Long id, CustomerDTO customer);
 
-    Customer deleteCustomerById(Long id);
+    CustomerDTO deleteCustomerById(Long id);
 
-    Customer deleteCustomerByName(String name);
+    CustomerDTO deleteCustomerByName(String name);
 
-    Customer restoreCustomerById(Long id);
+    CustomerDTO restoreCustomerById(Long id);
 
     long getAllActiveCustomerCount();
 
@@ -29,10 +28,10 @@ public interface CustomerService {
 
     BigDecimal getAverageBucketPriceFromActiveCustomers(Long customerId);
 
-    Product addProductInCustomersBucketIfActive(Long customerId, Long productId);
+    ProductDTO addProductInCustomersBucketIfActive(Long customerId, Long productId);
 
-    Product deleteProductFromCustomersBucket(Long customerId, Long productId);
+    ProductDTO deleteProductFromCustomersBucket(Long customerId, Long productId);
 
-    List<Product> deleteAllProductsFromActiveCustomersBucket(Long customerId);
+    List<ProductDTO> deleteAllProductsFromActiveCustomersBucket(Long customerId);
 
 }

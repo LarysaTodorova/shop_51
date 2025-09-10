@@ -1,7 +1,7 @@
 package ait.shop.controller;
 
-import ait.shop.model.entity.Customer;
-import ait.shop.model.entity.Product;
+import ait.shop.model.dto.CustomerDTO;
+import ait.shop.model.dto.ProductDTO;
 import ait.shop.service.interfaces.CustomerService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
@@ -28,47 +28,48 @@ public class CustomerController {
 
     @Operation(summary = "Create customer", description = "Add new customer.", tags = {"Customer"})
     @ApiResponses(value = {@ApiResponse(responseCode = "200", description = "successful operation",
-            content = {@Content(mediaType = "application/json", schema = @Schema(implementation = Customer.class)),
-                    @Content(mediaType = "application/xml", schema = @Schema(implementation = Customer.class))})})
+            content = {@Content(mediaType = "application/json", schema = @Schema(implementation = CustomerDTO.class)),
+                    @Content(mediaType = "application/xml", schema = @Schema(implementation = CustomerDTO.class))})})
     @PostMapping
-    public Customer saveCustomer(@Parameter(description = "Create customer object") @RequestBody Customer customer) {
-        return customerService.saveCustomer(customer);
+    public CustomerDTO saveCustomer(@Parameter(description = "Create customer object") @RequestBody CustomerDTO customerDto) {
+        return customerService.saveCustomer(customerDto);
     }
 
     @Operation(summary = "Get customer by Id", tags = {"Customer"})
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "successful operation",
-                    content = {@Content(mediaType = "application/json", schema = @Schema(implementation = Customer.class)),
-                            @Content(mediaType = "application/xml", schema = @Schema(implementation = Customer.class))}),
+                    content = {@Content(mediaType = "application/json", schema = @Schema(implementation = CustomerDTO.class)),
+                            @Content(mediaType = "application/xml", schema = @Schema(implementation = CustomerDTO.class))}),
             @ApiResponse(responseCode = "400", description = "Invalid customer Id supplied", content = @Content),
             @ApiResponse(responseCode = "404", description = "Customer not found", content = @Content)})
     @GetMapping("/{id}")
-    public Customer getById(@PathVariable Long id) {
+    public CustomerDTO getById(@Parameter(description = "The id that needs to be fetched.", required = true)
+                            @PathVariable Long id) {
         return customerService.getActiveCustomerById(id);
     }
 
     @GetMapping
-    public List<Customer> getAllCustomers() {
+    public List<CustomerDTO> getAllCustomers() {
         return customerService.getAllActiveCustomers();
     }
 
     @PutMapping("/{id}")
-    public Customer updateCustomer(@PathVariable Long id, @RequestBody Customer customer) {
-        return customerService.updateCustomer(id, customer);
+    public CustomerDTO updateCustomer(@PathVariable Long id, @RequestBody CustomerDTO customerDTO) {
+        return customerService.updateCustomer(id, customerDTO);
     }
 
     @DeleteMapping("/{customerId}")
-    public Customer deleteCustomerById(@PathVariable("customerId") Long id) {
+    public CustomerDTO deleteCustomerById(@PathVariable("customerId") Long id) {
         return customerService.deleteCustomerById(id);
     }
 
     @DeleteMapping("/name")
-    public Customer deleteCustomerByName(@RequestParam String name) {
+    public CustomerDTO deleteCustomerByName(@RequestParam String name) {
         return customerService.deleteCustomerByName(name);
     }
 
     @PutMapping("/restore/{id}")
-    public Customer restoreCustomer(@PathVariable Long id) {
+    public CustomerDTO restoreCustomer(@PathVariable Long id) {
         return customerService.restoreCustomerById(id);
     }
 
@@ -88,17 +89,17 @@ public class CustomerController {
     }
 
     @PutMapping("/bucket/{customerId}/{productId}")
-    public Product addProductInCustomerBucket(@PathVariable Long customerId, @PathVariable Long productId) {
+    public ProductDTO addProductInCustomerBucket(@PathVariable Long customerId, @PathVariable Long productId) {
         return customerService.addProductInCustomersBucketIfActive(customerId, productId);
     }
 
     @DeleteMapping("/from-customer-bucket/{customerId}/{productId}")
-    public Product deleteProductFromCustomerBucket(@PathVariable Long customerId, @PathVariable Long productId) {
+    public ProductDTO deleteProductFromCustomerBucket(@PathVariable Long customerId, @PathVariable Long productId) {
         return customerService.deleteProductFromCustomersBucket(customerId, productId);
     }
 
     @DeleteMapping("/products-from-customer-bucket/{customerId}")
-    public List<Product> deleteProductsFromCustomerBucket(@PathVariable Long customerId) {
+    public List<ProductDTO> deleteProductsFromCustomerBucket(@PathVariable Long customerId) {
         return customerService.deleteAllProductsFromActiveCustomersBucket(customerId);
     }
 }
