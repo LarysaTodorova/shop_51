@@ -4,7 +4,6 @@ package ait.shop.security.security_config;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
-import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -15,13 +14,13 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 
 /*
-1. Получение всех продуктов - всем пользователям,
-2 Получение продукта по id - аутентифицированным пользователям
-3 Сохранение продукта в БД - только администраторам (пользователя с ролью ADMIN).
+1. Получение всех продуктов - всем пользователям, включая анонимных (не прошли аутентификацию)
+2. Получение продукта по id - аутентифицированным пользователям с любой ролью (залогинен)
+3. Сохранение продукта в БД - только администраторам (пользователя с ролью ADMIN).
  */
 
-@EnableWebSecurity // все входящие
-@EnableMethodSecurity
+@EnableWebSecurity // все входящие http запросы будут проверяться Security
+@EnableMethodSecurity // Позволяет защитить отдельные методы
 @Configuration
 public class SecurityConfig {
 
