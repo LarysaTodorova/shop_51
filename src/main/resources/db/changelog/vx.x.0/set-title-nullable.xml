@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.6.xsd">
+
+    <changeSet id="" author="Lora">
+
+        <dropNotNullConstraint
+                tableName="product"
+                columnName="title"
+                columnDataType=""/>
+        <!--                Может будет работать без типа-->
+
+
+        <rollback>
+            <!--           обратные действия -->
+            <addNotNullConstraint tableName="product" columnName="title" columnDataType="varchar(64)"/>
+        </rollback>
+
+    </changeSet>
+
+</databaseChangeLog>

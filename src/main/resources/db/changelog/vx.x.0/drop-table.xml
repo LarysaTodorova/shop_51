@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.6.xsd">
+
+    <changeSet id="" author="Lora">
+
+        <dropTable tableName="product" cascadeConstraints="true"/>
+
+        <rollback>
+            <!--           обратные действия -->
+            <!--           Мы можем заново создать таблицу , но данные уже не вернуться-->
+            <createTable tableName="product">
+                <column name="id" type="bigint" autoIncrement="true">
+                    <constraints primaryKey="true"/>
+                </column>
+                <!--               Остальные колонки -->
+            </createTable>
+        </rollback>
+
+    </changeSet>
+
+</databaseChangeLog>
