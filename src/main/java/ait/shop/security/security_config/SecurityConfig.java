@@ -48,6 +48,7 @@ public class SecurityConfig {
                         .requestMatchers(HttpMethod.POST, "/products").hasRole("ADMIN")
 
                 );
+        // Собирает цепочку фильтров, которые мы прописали выше
         return http.build();
     }
 
