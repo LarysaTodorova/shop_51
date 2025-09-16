@@ -33,10 +33,15 @@ public class SecurityConfig {
     @Bean
     SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
+                // Этот метод отключает защиту CSRF
                 .csrf(AbstractHttpConfigurer::disable)
+                // Этот метод служит для настройки сессий
                 .sessionManagement(session ->
                         session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+                // Включаем базовую авторизацию (при помощи логина и пароля)
                 .httpBasic(Customizer.withDefaults())
+                // При помощи этого метода мы конфигурируем доступ к разному функционалу
+                // приложения для разных ролей пользователей
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers(HttpMethod.GET, "/products").permitAll()
                         .requestMatchers(HttpMethod.GET, "/products/{id}").authenticated()
