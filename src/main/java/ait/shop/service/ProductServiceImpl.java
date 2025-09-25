@@ -5,6 +5,8 @@ import ait.shop.model.entity.Product;
 import ait.shop.repository.ProductRepository;
 import ait.shop.service.interfaces.ProductService;
 import ait.shop.service.mapping.ProductMappingService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
@@ -15,6 +17,9 @@ public class ProductServiceImpl implements ProductService {
 
     private final ProductRepository repository;
     private final ProductMappingService mapper;
+
+    // это объект Logger
+    private final Logger logger = LoggerFactory.getLogger(ProductServiceImpl.class);
 
     public ProductServiceImpl(ProductRepository repository, ProductMappingService mapper) {
         this.repository = repository;
@@ -31,8 +36,12 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public ProductDTO getById(Long id) {
+
         Product product = repository.findById(id).orElse(null);
-        if (product == null || !product.isActive()) return null;
+
+        if (product == null || !product.isActive()) {
+            throw new IllegalArgumentException(String.format("Product with id %d does not found", id));
+        }
 
         // true || ? -> true
         // true | NPE -> true
@@ -42,6 +51,11 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public List<ProductDTO> getAllActiveProducts() {
+
+//        logger.info("Info level massage");
+//        logger.warn("Warn level massage");
+//        logger.error("Error level massage");
+
         return repository.findAll().stream()
                 .filter(Product::isActive)
                 // Добавим строку маппинга
