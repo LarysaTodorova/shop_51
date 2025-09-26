@@ -18,8 +18,9 @@ public class ProductServiceImpl implements ProductService {
     private final ProductRepository repository;
     private final ProductMappingService mapper;
 
-    // это объект Logger
-    private final Logger logger = LoggerFactory.getLogger(ProductServiceImpl.class);
+    // Это объект логгера, при помощи него осуществляется логирование,
+    // то есть фиксация событий в электронный журнал (лог)
+    // private final Logger logger = LoggerFactory.getLogger(ProductServiceImpl.class);
 
     public ProductServiceImpl(ProductRepository repository, ProductMappingService mapper) {
         this.repository = repository;
@@ -52,6 +53,8 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public List<ProductDTO> getAllActiveProducts() {
 
+        // У объекта логгера мы вызываем разные методы для фиксации
+        // событий на определённые уровни важности
 //        logger.info("Info level massage");
 //        logger.warn("Warn level massage");
 //        logger.error("Error level massage");

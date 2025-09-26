@@ -6,11 +6,21 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
+// Аннотация @Aspect определяет, что этот класс является аспектом.
+// Задача класса аспекта - содержать поинткаты и адвайсы.
+// Поинткат - это правило, которое определяет, к каким целям
+// должен быть применён адвайс.
+// Адвайс - это дополнительная логика, которая внедряется в основную логику.
 @Aspect
 @Component
 public class AspectLogging {
 
     private Logger logger = LoggerFactory.getLogger(AspectLogging.class);
+
+    // public double calculate(int v1, double v2)
+    // public double calculate(double[] array)
+    // @Pointcut(.....calculate(..))  ->  такой поинткат применится к обоим методам
+    // @Pointcut(.....calculate(int, double))  ->  такой поинткат применится только к первому методу
 
     // @Pointcut("execution(* ait.shop.service.ProductServiceImpl.saveProduct(ait.shop.model.dto.ProductDTO))")
     @Pointcut("execution(* ait.shop.service.ProductServiceImpl.saveProduct(..))")
