@@ -1,32 +1,32 @@
-2025-09-25T21:00:48.432+03:00  INFO 6012 --- [Shop] [main] ait.shop.Shop51Application               : Starting Shop51Application using Java 17.0.16 with PID 6012 (C:\Users\Admin\IdeaProjects51\shop_51\target\classes started by Admin in C:\Users\Admin\IdeaProjects51\shop_51)
-2025-09-25T21:00:48.434+03:00  INFO 6012 --- [Shop] [main] ait.shop.Shop51Application               : No active profile set, falling back to 1 default profile: "default"
-2025-09-25T21:00:49.140+03:00  INFO 6012 --- [Shop] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-09-25T21:00:49.186+03:00  INFO 6012 --- [Shop] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 38 ms. Found 4 JPA repository interfaces.
-2025-09-25T21:00:49.620+03:00  INFO 6012 --- [Shop] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2025-09-25T21:00:49.642+03:00  INFO 6012 --- [Shop] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-09-25T21:00:49.644+03:00  INFO 6012 --- [Shop] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.44]
-2025-09-25T21:00:49.695+03:00  INFO 6012 --- [Shop] [main] o.a.c.c.C.[Tomcat].[localhost].[/api]    : Initializing Spring embedded WebApplicationContext
-2025-09-25T21:00:49.695+03:00  INFO 6012 --- [Shop] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1228 ms
-2025-09-25T21:00:49.857+03:00  INFO 6012 --- [Shop] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-09-25T21:00:50.073+03:00  INFO 6012 --- [Shop] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@1b1252c8
-2025-09-25T21:00:50.075+03:00  INFO 6012 --- [Shop] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-09-25T21:00:50.212+03:00  INFO 6012 --- [Shop] [main] liquibase.database                       : Set default schema name to public
-2025-09-25T21:00:50.628+03:00  INFO 6012 --- [Shop] [main] liquibase.changelog                      : Reading from public.databasechangelog
-2025-09-25T21:00:50.750+03:00  INFO 6012 --- [Shop] [main] liquibase.ui                             : Database is up to date, no changesets to execute
-2025-09-25T21:00:50.752+03:00  INFO 6012 --- [Shop] [main] liquibase.changelog                      : Reading from public.databasechangelog
-2025-09-25T21:00:50.760+03:00  INFO 6012 --- [Shop] [main] liquibase.util                           : UPDATE SUMMARY
-2025-09-25T21:00:50.761+03:00  INFO 6012 --- [Shop] [main] liquibase.util                           : Run:                          0
-2025-09-25T21:00:50.762+03:00  INFO 6012 --- [Shop] [main] liquibase.util                           : Previously run:              13
-2025-09-25T21:00:50.762+03:00  INFO 6012 --- [Shop] [main] liquibase.util                           : Filtered out:                 0
-2025-09-25T21:00:50.762+03:00  INFO 6012 --- [Shop] [main] liquibase.util                           : -------------------------------
-2025-09-25T21:00:50.762+03:00  INFO 6012 --- [Shop] [main] liquibase.util                           : Total change sets:           13
-2025-09-25T21:00:50.762+03:00  INFO 6012 --- [Shop] [main] liquibase.util                           : Update summary generated
-2025-09-25T21:00:50.763+03:00  INFO 6012 --- [Shop] [main] liquibase.command                        : Command execution complete
-2025-09-25T21:00:51.914+03:00  INFO 6012 --- [Shop] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-09-25T21:00:51.963+03:00  INFO 6012 --- [Shop] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.26.Final
-2025-09-25T21:00:51.992+03:00  INFO 6012 --- [Shop] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-09-25T21:00:52.219+03:00  INFO 6012 --- [Shop] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-09-25T21:00:52.290+03:00  INFO 6012 --- [Shop] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+2025-09-28T20:18:44.816+03:00  INFO 22616 --- [Shop] [main] ait.shop.Shop51Application               : Starting Shop51Application using Java 17.0.16 with PID 22616 (C:\Users\Admin\IdeaProjects51\shop_51\target\classes started by Admin in C:\Users\Admin\IdeaProjects51\shop_51)
+2025-09-28T20:18:44.818+03:00  INFO 22616 --- [Shop] [main] ait.shop.Shop51Application               : No active profile set, falling back to 1 default profile: "default"
+2025-09-28T20:18:45.447+03:00  INFO 22616 --- [Shop] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-09-28T20:18:45.495+03:00  INFO 22616 --- [Shop] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 41 ms. Found 4 JPA repository interfaces.
+2025-09-28T20:18:45.962+03:00  INFO 22616 --- [Shop] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-09-28T20:18:45.972+03:00  INFO 22616 --- [Shop] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-09-28T20:18:45.972+03:00  INFO 22616 --- [Shop] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.44]
+2025-09-28T20:18:46.013+03:00  INFO 22616 --- [Shop] [main] o.a.c.c.C.[Tomcat].[localhost].[/api]    : Initializing Spring embedded WebApplicationContext
+2025-09-28T20:18:46.014+03:00  INFO 22616 --- [Shop] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1166 ms
+2025-09-28T20:18:46.133+03:00  INFO 22616 --- [Shop] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-09-28T20:18:46.248+03:00  INFO 22616 --- [Shop] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@38022758
+2025-09-28T20:18:46.249+03:00  INFO 22616 --- [Shop] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-09-28T20:18:46.360+03:00  INFO 22616 --- [Shop] [main] liquibase.database                       : Set default schema name to public
+2025-09-28T20:18:46.746+03:00  INFO 22616 --- [Shop] [main] liquibase.changelog                      : Reading from public.databasechangelog
+2025-09-28T20:18:46.907+03:00  INFO 22616 --- [Shop] [main] liquibase.ui                             : Database is up to date, no changesets to execute
+2025-09-28T20:18:46.910+03:00  INFO 22616 --- [Shop] [main] liquibase.changelog                      : Reading from public.databasechangelog
+2025-09-28T20:18:46.920+03:00  INFO 22616 --- [Shop] [main] liquibase.util                           : UPDATE SUMMARY
+2025-09-28T20:18:46.921+03:00  INFO 22616 --- [Shop] [main] liquibase.util                           : Run:                          0
+2025-09-28T20:18:46.922+03:00  INFO 22616 --- [Shop] [main] liquibase.util                           : Previously run:              13
+2025-09-28T20:18:46.922+03:00  INFO 22616 --- [Shop] [main] liquibase.util                           : Filtered out:                 0
+2025-09-28T20:18:46.922+03:00  INFO 22616 --- [Shop] [main] liquibase.util                           : -------------------------------
+2025-09-28T20:18:46.922+03:00  INFO 22616 --- [Shop] [main] liquibase.util                           : Total change sets:           13
+2025-09-28T20:18:46.923+03:00  INFO 22616 --- [Shop] [main] liquibase.util                           : Update summary generated
+2025-09-28T20:18:46.924+03:00  INFO 22616 --- [Shop] [main] liquibase.command                        : Command execution complete
+2025-09-28T20:18:47.579+03:00  INFO 22616 --- [Shop] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-09-28T20:18:47.615+03:00  INFO 22616 --- [Shop] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.26.Final
+2025-09-28T20:18:47.646+03:00  INFO 22616 --- [Shop] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-09-28T20:18:47.834+03:00  INFO 22616 --- [Shop] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-09-28T20:18:47.894+03:00  INFO 22616 --- [Shop] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
 	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
 	Database driver: undefined/unknown
 	Database version: 17.6
@@ -34,188 +34,19 @@
 	Isolation level: undefined/unknown
 	Minimum pool size: undefined/unknown
 	Maximum pool size: undefined/unknown
-2025-09-25T21:00:53.006+03:00  INFO 6012 --- [Shop] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-09-25T21:00:53.008+03:00  INFO 6012 --- [Shop] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-09-25T21:00:53.325+03:00  WARN 6012 --- [Shop] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-09-25T21:00:53.506+03:00  INFO 6012 --- [Shop] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name userDetailServiceImpl
-2025-09-25T21:00:53.857+03:00  INFO 6012 --- [Shop] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/api'
-2025-09-25T21:00:53.864+03:00  INFO 6012 --- [Shop] [main] ait.shop.Shop51Application               : Started Shop51Application in 5.808 seconds (process running for 7.232)
-2025-09-25T21:01:50.446+03:00  INFO 6012 --- [Shop] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/api]    : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-09-25T21:01:50.446+03:00  INFO 6012 --- [Shop] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2025-09-25T21:01:50.447+03:00  INFO 6012 --- [Shop] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2025-09-25T21:01:50.479+03:00  INFO 6012 --- [Shop] [http-nio-8080-exec-1] ait.shop.service.ProductServiceImpl      : Info level massage
-2025-09-25T21:01:50.479+03:00  WARN 6012 --- [Shop] [http-nio-8080-exec-1] ait.shop.service.ProductServiceImpl      : Warn level massage
-2025-09-25T21:01:50.479+03:00 ERROR 6012 --- [Shop] [http-nio-8080-exec-1] ait.shop.service.ProductServiceImpl      : Error level massage
-2025-09-25T21:04:00.588+03:00  INFO 6012 --- [Shop] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
-2025-09-25T21:04:00.728+03:00  INFO 6012 --- [Shop] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
-2025-09-25T21:04:00.730+03:00  INFO 6012 --- [Shop] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-09-25T21:04:00.734+03:00  INFO 6012 --- [Shop] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2025-09-25T21:04:00.736+03:00  INFO 6012 --- [Shop] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2025-09-25T22:03:40.784+03:00  INFO 21272 --- [Shop] [main] ait.shop.Shop51Application               : Starting Shop51Application using Java 17.0.16 with PID 21272 (C:\Users\Admin\IdeaProjects51\shop_51\target\classes started by Admin in C:\Users\Admin\IdeaProjects51\shop_51)
-2025-09-25T22:03:40.787+03:00  INFO 21272 --- [Shop] [main] ait.shop.Shop51Application               : No active profile set, falling back to 1 default profile: "default"
-2025-09-25T22:03:41.442+03:00  INFO 21272 --- [Shop] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-09-25T22:03:41.497+03:00  INFO 21272 --- [Shop] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 46 ms. Found 4 JPA repository interfaces.
-2025-09-25T22:03:42.027+03:00  INFO 21272 --- [Shop] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2025-09-25T22:03:42.037+03:00  INFO 21272 --- [Shop] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-09-25T22:03:42.038+03:00  INFO 21272 --- [Shop] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.44]
-2025-09-25T22:03:42.076+03:00  INFO 21272 --- [Shop] [main] o.a.c.c.C.[Tomcat].[localhost].[/api]    : Initializing Spring embedded WebApplicationContext
-2025-09-25T22:03:42.077+03:00  INFO 21272 --- [Shop] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1254 ms
-2025-09-25T22:03:42.204+03:00  INFO 21272 --- [Shop] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-09-25T22:03:42.333+03:00  INFO 21272 --- [Shop] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@5cffec7
-2025-09-25T22:03:42.334+03:00  INFO 21272 --- [Shop] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-09-25T22:03:42.433+03:00  INFO 21272 --- [Shop] [main] liquibase.database                       : Set default schema name to public
-2025-09-25T22:03:42.780+03:00  INFO 21272 --- [Shop] [main] liquibase.changelog                      : Reading from public.databasechangelog
-2025-09-25T22:03:42.911+03:00  INFO 21272 --- [Shop] [main] liquibase.ui                             : Database is up to date, no changesets to execute
-2025-09-25T22:03:42.913+03:00  INFO 21272 --- [Shop] [main] liquibase.changelog                      : Reading from public.databasechangelog
-2025-09-25T22:03:42.922+03:00  INFO 21272 --- [Shop] [main] liquibase.util                           : UPDATE SUMMARY
-2025-09-25T22:03:42.922+03:00  INFO 21272 --- [Shop] [main] liquibase.util                           : Run:                          0
-2025-09-25T22:03:42.922+03:00  INFO 21272 --- [Shop] [main] liquibase.util                           : Previously run:              13
-2025-09-25T22:03:42.922+03:00  INFO 21272 --- [Shop] [main] liquibase.util                           : Filtered out:                 0
-2025-09-25T22:03:42.922+03:00  INFO 21272 --- [Shop] [main] liquibase.util                           : -------------------------------
-2025-09-25T22:03:42.922+03:00  INFO 21272 --- [Shop] [main] liquibase.util                           : Total change sets:           13
-2025-09-25T22:03:42.923+03:00  INFO 21272 --- [Shop] [main] liquibase.util                           : Update summary generated
-2025-09-25T22:03:42.924+03:00  INFO 21272 --- [Shop] [main] liquibase.command                        : Command execution complete
-2025-09-25T22:03:43.571+03:00  INFO 21272 --- [Shop] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-09-25T22:03:43.608+03:00  INFO 21272 --- [Shop] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.26.Final
-2025-09-25T22:03:43.637+03:00  INFO 21272 --- [Shop] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-09-25T22:03:43.832+03:00  INFO 21272 --- [Shop] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-09-25T22:03:43.900+03:00  INFO 21272 --- [Shop] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
-	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
-	Database driver: undefined/unknown
-	Database version: 17.6
-	Autocommit mode: undefined/unknown
-	Isolation level: undefined/unknown
-	Minimum pool size: undefined/unknown
-	Maximum pool size: undefined/unknown
-2025-09-25T22:03:44.619+03:00  INFO 21272 --- [Shop] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-09-25T22:03:44.624+03:00  INFO 21272 --- [Shop] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-09-25T22:03:45.007+03:00  WARN 21272 --- [Shop] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-09-25T22:03:45.213+03:00  INFO 21272 --- [Shop] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name userDetailServiceImpl
-2025-09-25T22:03:45.590+03:00  INFO 21272 --- [Shop] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/api'
-2025-09-25T22:03:45.597+03:00  INFO 21272 --- [Shop] [main] ait.shop.Shop51Application               : Started Shop51Application in 5.195 seconds (process running for 6.246)
-2025-09-25T22:06:28.984+03:00  INFO 21272 --- [Shop] [http-nio-8080-exec-3] o.a.c.c.C.[Tomcat].[localhost].[/api]    : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-09-25T22:06:28.984+03:00  INFO 21272 --- [Shop] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2025-09-25T22:06:28.985+03:00  INFO 21272 --- [Shop] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
-2025-09-25T22:06:29.362+03:00  INFO 21272 --- [Shop] [http-nio-8080-exec-3] ait.shop.logging.AspectLogging           : Method saveProduct of class ProductServiceImpl called with argument ProductDTO: id - null, title - Grape, price - 3.50
-2025-09-25T22:08:39.230+03:00  INFO 21272 --- [Shop] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
-2025-09-25T22:08:39.370+03:00  INFO 21272 --- [Shop] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
-2025-09-25T22:08:39.375+03:00  INFO 21272 --- [Shop] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-09-25T22:08:39.379+03:00  INFO 21272 --- [Shop] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2025-09-25T22:08:39.389+03:00  INFO 21272 --- [Shop] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2025-09-25T22:10:14.694+03:00  INFO 18328 --- [Shop] [main] ait.shop.Shop51Application               : Starting Shop51Application using Java 17.0.16 with PID 18328 (C:\Users\Admin\IdeaProjects51\shop_51\target\classes started by Admin in C:\Users\Admin\IdeaProjects51\shop_51)
-2025-09-25T22:10:14.697+03:00  INFO 18328 --- [Shop] [main] ait.shop.Shop51Application               : No active profile set, falling back to 1 default profile: "default"
-2025-09-25T22:10:15.282+03:00  INFO 18328 --- [Shop] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-09-25T22:10:15.329+03:00  INFO 18328 --- [Shop] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 39 ms. Found 4 JPA repository interfaces.
-2025-09-25T22:10:15.832+03:00  INFO 18328 --- [Shop] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2025-09-25T22:10:15.844+03:00  INFO 18328 --- [Shop] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-09-25T22:10:15.844+03:00  INFO 18328 --- [Shop] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.44]
-2025-09-25T22:10:15.885+03:00  INFO 18328 --- [Shop] [main] o.a.c.c.C.[Tomcat].[localhost].[/api]    : Initializing Spring embedded WebApplicationContext
-2025-09-25T22:10:15.885+03:00  INFO 18328 --- [Shop] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1160 ms
-2025-09-25T22:10:16.022+03:00  INFO 18328 --- [Shop] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-09-25T22:10:16.148+03:00  INFO 18328 --- [Shop] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@17c53dfb
-2025-09-25T22:10:16.150+03:00  INFO 18328 --- [Shop] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-09-25T22:10:16.249+03:00  INFO 18328 --- [Shop] [main] liquibase.database                       : Set default schema name to public
-2025-09-25T22:10:16.602+03:00  INFO 18328 --- [Shop] [main] liquibase.changelog                      : Reading from public.databasechangelog
-2025-09-25T22:10:16.725+03:00  INFO 18328 --- [Shop] [main] liquibase.ui                             : Database is up to date, no changesets to execute
-2025-09-25T22:10:16.728+03:00  INFO 18328 --- [Shop] [main] liquibase.changelog                      : Reading from public.databasechangelog
-2025-09-25T22:10:16.741+03:00  INFO 18328 --- [Shop] [main] liquibase.util                           : UPDATE SUMMARY
-2025-09-25T22:10:16.741+03:00  INFO 18328 --- [Shop] [main] liquibase.util                           : Run:                          0
-2025-09-25T22:10:16.741+03:00  INFO 18328 --- [Shop] [main] liquibase.util                           : Previously run:              13
-2025-09-25T22:10:16.741+03:00  INFO 18328 --- [Shop] [main] liquibase.util                           : Filtered out:                 0
-2025-09-25T22:10:16.741+03:00  INFO 18328 --- [Shop] [main] liquibase.util                           : -------------------------------
-2025-09-25T22:10:16.741+03:00  INFO 18328 --- [Shop] [main] liquibase.util                           : Total change sets:           13
-2025-09-25T22:10:16.742+03:00  INFO 18328 --- [Shop] [main] liquibase.util                           : Update summary generated
-2025-09-25T22:10:16.743+03:00  INFO 18328 --- [Shop] [main] liquibase.command                        : Command execution complete
-2025-09-25T22:10:17.352+03:00  INFO 18328 --- [Shop] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-09-25T22:10:17.388+03:00  INFO 18328 --- [Shop] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.26.Final
-2025-09-25T22:10:17.429+03:00  INFO 18328 --- [Shop] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-09-25T22:10:17.642+03:00  INFO 18328 --- [Shop] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-09-25T22:10:17.703+03:00  INFO 18328 --- [Shop] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
-	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
-	Database driver: undefined/unknown
-	Database version: 17.6
-	Autocommit mode: undefined/unknown
-	Isolation level: undefined/unknown
-	Minimum pool size: undefined/unknown
-	Maximum pool size: undefined/unknown
-2025-09-25T22:10:18.480+03:00  INFO 18328 --- [Shop] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-09-25T22:10:18.484+03:00  INFO 18328 --- [Shop] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-09-25T22:10:18.862+03:00  WARN 18328 --- [Shop] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-09-25T22:10:19.066+03:00  INFO 18328 --- [Shop] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name userDetailServiceImpl
-2025-09-25T22:10:19.464+03:00  INFO 18328 --- [Shop] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/api'
-2025-09-25T22:10:19.472+03:00  INFO 18328 --- [Shop] [main] ait.shop.Shop51Application               : Started Shop51Application in 5.151 seconds (process running for 5.664)
-2025-09-25T22:10:37.933+03:00  INFO 18328 --- [Shop] [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/api]    : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-09-25T22:10:37.935+03:00  INFO 18328 --- [Shop] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2025-09-25T22:10:37.936+03:00  INFO 18328 --- [Shop] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2025-09-25T22:11:36.197+03:00  WARN 18328 --- [Shop] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m19s934ms167µs).
-2025-09-25T22:11:57.971+03:00  INFO 18328 --- [Shop] [http-nio-8080-exec-2] ait.shop.logging.AspectLogging           : Method saveProduct of class ProductServiceImpl called with argument ProductDTO: id - null, title - Test222, price - 3.99
-2025-09-25T22:13:12.565+03:00  INFO 18328 --- [Shop] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
-2025-09-25T22:13:12.696+03:00  INFO 18328 --- [Shop] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
-2025-09-25T22:13:12.699+03:00  INFO 18328 --- [Shop] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-09-25T22:13:12.700+03:00  INFO 18328 --- [Shop] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2025-09-25T22:13:12.704+03:00  INFO 18328 --- [Shop] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2025-09-25T22:48:25.202+03:00  INFO 21396 --- [Shop] [main] ait.shop.Shop51Application               : Starting Shop51Application using Java 17.0.16 with PID 21396 (C:\Users\Admin\IdeaProjects51\shop_51\target\classes started by Admin in C:\Users\Admin\IdeaProjects51\shop_51)
-2025-09-25T22:48:25.204+03:00  INFO 21396 --- [Shop] [main] ait.shop.Shop51Application               : No active profile set, falling back to 1 default profile: "default"
-2025-09-25T22:48:25.807+03:00  INFO 21396 --- [Shop] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-09-25T22:48:25.854+03:00  INFO 21396 --- [Shop] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 40 ms. Found 4 JPA repository interfaces.
-2025-09-25T22:48:26.332+03:00  INFO 21396 --- [Shop] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2025-09-25T22:48:26.342+03:00  INFO 21396 --- [Shop] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-09-25T22:48:26.342+03:00  INFO 21396 --- [Shop] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.44]
-2025-09-25T22:48:26.380+03:00  INFO 21396 --- [Shop] [main] o.a.c.c.C.[Tomcat].[localhost].[/api]    : Initializing Spring embedded WebApplicationContext
-2025-09-25T22:48:26.381+03:00  INFO 21396 --- [Shop] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1142 ms
-2025-09-25T22:48:26.507+03:00  INFO 21396 --- [Shop] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-09-25T22:48:26.617+03:00  INFO 21396 --- [Shop] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@ae3c140
-2025-09-25T22:48:26.619+03:00  INFO 21396 --- [Shop] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-09-25T22:48:26.708+03:00  INFO 21396 --- [Shop] [main] liquibase.database                       : Set default schema name to public
-2025-09-25T22:48:27.040+03:00  INFO 21396 --- [Shop] [main] liquibase.changelog                      : Reading from public.databasechangelog
-2025-09-25T22:48:27.162+03:00  INFO 21396 --- [Shop] [main] liquibase.ui                             : Database is up to date, no changesets to execute
-2025-09-25T22:48:27.165+03:00  INFO 21396 --- [Shop] [main] liquibase.changelog                      : Reading from public.databasechangelog
-2025-09-25T22:48:27.174+03:00  INFO 21396 --- [Shop] [main] liquibase.util                           : UPDATE SUMMARY
-2025-09-25T22:48:27.175+03:00  INFO 21396 --- [Shop] [main] liquibase.util                           : Run:                          0
-2025-09-25T22:48:27.175+03:00  INFO 21396 --- [Shop] [main] liquibase.util                           : Previously run:              13
-2025-09-25T22:48:27.175+03:00  INFO 21396 --- [Shop] [main] liquibase.util                           : Filtered out:                 0
-2025-09-25T22:48:27.175+03:00  INFO 21396 --- [Shop] [main] liquibase.util                           : -------------------------------
-2025-09-25T22:48:27.175+03:00  INFO 21396 --- [Shop] [main] liquibase.util                           : Total change sets:           13
-2025-09-25T22:48:27.176+03:00  INFO 21396 --- [Shop] [main] liquibase.util                           : Update summary generated
-2025-09-25T22:48:27.177+03:00  INFO 21396 --- [Shop] [main] liquibase.command                        : Command execution complete
-2025-09-25T22:48:27.848+03:00  INFO 21396 --- [Shop] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-09-25T22:48:27.889+03:00  INFO 21396 --- [Shop] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.26.Final
-2025-09-25T22:48:27.914+03:00  INFO 21396 --- [Shop] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-09-25T22:48:28.104+03:00  INFO 21396 --- [Shop] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-09-25T22:48:28.164+03:00  INFO 21396 --- [Shop] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
-	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
-	Database driver: undefined/unknown
-	Database version: 17.6
-	Autocommit mode: undefined/unknown
-	Isolation level: undefined/unknown
-	Minimum pool size: undefined/unknown
-	Maximum pool size: undefined/unknown
-2025-09-25T22:48:28.850+03:00  INFO 21396 --- [Shop] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-09-25T22:48:28.851+03:00  INFO 21396 --- [Shop] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-09-25T22:48:29.193+03:00  WARN 21396 --- [Shop] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-09-25T22:48:29.383+03:00  INFO 21396 --- [Shop] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name userDetailServiceImpl
-2025-09-25T22:48:29.757+03:00  INFO 21396 --- [Shop] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/api'
-2025-09-25T22:48:29.764+03:00  INFO 21396 --- [Shop] [main] ait.shop.Shop51Application               : Started Shop51Application in 4.949 seconds (process running for 5.443)
-2025-09-25T22:49:50.672+03:00  INFO 21396 --- [Shop] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/api]    : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-09-25T22:49:50.674+03:00  INFO 21396 --- [Shop] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2025-09-25T22:49:50.675+03:00  INFO 21396 --- [Shop] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2025-09-25T22:49:51.006+03:00 ERROR 21396 --- [Shop] [http-nio-8080-exec-1] o.a.c.c.C.[.[.[.[dispatcherServlet]      : Servlet.service() for servlet [dispatcherServlet] in context with path [/api] threw exception [Request processing failed: java.lang.IllegalArgumentException: Product with id 25 does not found] with root cause
+2025-09-28T20:18:48.574+03:00  INFO 22616 --- [Shop] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-09-28T20:18:48.576+03:00  INFO 22616 --- [Shop] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-09-28T20:18:48.887+03:00  WARN 22616 --- [Shop] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-09-28T20:18:49.069+03:00  INFO 22616 --- [Shop] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name userDetailServiceImpl
+2025-09-28T20:18:49.457+03:00  INFO 22616 --- [Shop] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/api'
+2025-09-28T20:18:49.464+03:00  INFO 22616 --- [Shop] [main] ait.shop.Shop51Application               : Started Shop51Application in 5.027 seconds (process running for 5.545)
+2025-09-28T20:18:57.539+03:00  INFO 22616 --- [Shop] [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/api]    : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-09-28T20:18:57.539+03:00  INFO 22616 --- [Shop] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-09-28T20:18:57.541+03:00  INFO 22616 --- [Shop] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2025-09-28T20:18:57.863+03:00 ERROR 22616 --- [Shop] [http-nio-8080-exec-2] o.a.c.c.C.[.[.[.[dispatcherServlet]      : Servlet.service() for servlet [dispatcherServlet] in context with path [/api] threw exception [Request processing failed: java.lang.IllegalArgumentException: Product with id 8 does not found] with root cause
 
-java.lang.IllegalArgumentException: Product with id 25 does not found
-	at ait.shop.service.ProductServiceImpl.getById(ProductServiceImpl.java:43) ~[classes/:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:569) ~[na:na]
-	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:360) ~[spring-aop-6.2.10.jar:6.2.10]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196) ~[spring-aop-6.2.10.jar:6.2.10]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-6.2.10.jar:6.2.10]
-	at org.springframework.aop.framework.adapter.AfterReturningAdviceInterceptor.invoke(AfterReturningAdviceInterceptor.java:57) ~[spring-aop-6.2.10.jar:6.2.10]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.2.10.jar:6.2.10]
-	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97) ~[spring-aop-6.2.10.jar:6.2.10]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.2.10.jar:6.2.10]
-	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:728) ~[spring-aop-6.2.10.jar:6.2.10]
-	at ait.shop.service.ProductServiceImpl$$SpringCGLIB$$0.getById(<generated>) ~[classes/:na]
+java.lang.IllegalArgumentException: Product with id 8 does not found
+	at ait.shop.service.implService.ProductServiceImpl.getById(ProductServiceImpl.java:42) ~[classes/:na]
 	at ait.shop.controller.ProductController.detById(ProductController.java:53) ~[classes/:na]
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
@@ -321,163 +152,40 @@ java.lang.IllegalArgumentException: Product with id 25 does not found
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.44.jar:10.1.44]
 	at java.base/java.lang.Thread.run(Thread.java:840) ~[na:na]
 
-2025-09-25T22:50:45.658+03:00 ERROR 21396 --- [Shop] [http-nio-8080-exec-4] o.a.c.c.C.[.[.[.[dispatcherServlet]      : Servlet.service() for servlet [dispatcherServlet] in context with path [/api] threw exception [Request processing failed: java.lang.IllegalArgumentException: Product with id 25 does not found] with root cause
-
-java.lang.IllegalArgumentException: Product with id 25 does not found
-	at ait.shop.service.ProductServiceImpl.getById(ProductServiceImpl.java:43) ~[classes/:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:569) ~[na:na]
-	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:360) ~[spring-aop-6.2.10.jar:6.2.10]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196) ~[spring-aop-6.2.10.jar:6.2.10]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-6.2.10.jar:6.2.10]
-	at org.springframework.aop.framework.adapter.AfterReturningAdviceInterceptor.invoke(AfterReturningAdviceInterceptor.java:57) ~[spring-aop-6.2.10.jar:6.2.10]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.2.10.jar:6.2.10]
-	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97) ~[spring-aop-6.2.10.jar:6.2.10]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.2.10.jar:6.2.10]
-	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:728) ~[spring-aop-6.2.10.jar:6.2.10]
-	at ait.shop.service.ProductServiceImpl$$SpringCGLIB$$0.getById(<generated>) ~[classes/:na]
-	at ait.shop.controller.ProductController.detById(ProductController.java:53) ~[classes/:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:569) ~[na:na]
-	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:258) ~[spring-web-6.2.10.jar:6.2.10]
-	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:191) ~[spring-web-6.2.10.jar:6.2.10]
-	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.2.10.jar:6.2.10]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:991) ~[spring-webmvc-6.2.10.jar:6.2.10]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:896) ~[spring-webmvc-6.2.10.jar:6.2.10]
-	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.2.10.jar:6.2.10]
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-6.2.10.jar:6.2.10]
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.2.10.jar:6.2.10]
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.2.10.jar:6.2.10]
-	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903) ~[spring-webmvc-6.2.10.jar:6.2.10]
-	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564) ~[tomcat-embed-core-10.1.44.jar:6.0]
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.2.10.jar:6.2.10]
-	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.44.jar:6.0]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) ~[tomcat-embed-core-10.1.44.jar:10.1.44]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.44.jar:10.1.44]
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.44.jar:10.1.44]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.44.jar:10.1.44]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.44.jar:10.1.44]
-	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108) ~[spring-web-6.2.10.jar:6.2.10]
-	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108) ~[spring-web-6.2.10.jar:6.2.10]
-	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231) ~[spring-security-web-6.5.3.jar:6.5.3]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:365) ~[spring-security-web-6.5.3.jar:6.5.3]
-	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:101) ~[spring-security-web-6.5.3.jar:6.5.3]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.5.3.jar:6.5.3]
-	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:125) ~[spring-security-web-6.5.3.jar:6.5.3]
-	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:119) ~[spring-security-web-6.5.3.jar:6.5.3]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.5.3.jar:6.5.3]
-	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:131) ~[spring-security-web-6.5.3.jar:6.5.3]
-	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:85) ~[spring-security-web-6.5.3.jar:6.5.3]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.5.3.jar:6.5.3]
-	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100) ~[spring-security-web-6.5.3.jar:6.5.3]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.5.3.jar:6.5.3]
-	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179) ~[spring-security-web-6.5.3.jar:6.5.3]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.5.3.jar:6.5.3]
-	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) ~[spring-security-web-6.5.3.jar:6.5.3]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.5.3.jar:6.5.3]
-	at org.springframework.security.web.authentication.www.BasicAuthenticationFilter.doFilterInternal(BasicAuthenticationFilter.java:213) ~[spring-security-web-6.5.3.jar:6.5.3]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.10.jar:6.2.10]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.5.3.jar:6.5.3]
-	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107) ~[spring-security-web-6.5.3.jar:6.5.3]
-	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93) ~[spring-security-web-6.5.3.jar:6.5.3]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.5.3.jar:6.5.3]
-	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90) ~[spring-security-web-6.5.3.jar:6.5.3]
-	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75) ~[spring-security-web-6.5.3.jar:6.5.3]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.10.jar:6.2.10]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.5.3.jar:6.5.3]
-	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82) ~[spring-security-web-6.5.3.jar:6.5.3]
-	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69) ~[spring-security-web-6.5.3.jar:6.5.3]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.5.3.jar:6.5.3]
-	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62) ~[spring-security-web-6.5.3.jar:6.5.3]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.10.jar:6.2.10]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.5.3.jar:6.5.3]
-	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42) ~[spring-security-web-6.5.3.jar:6.5.3]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.10.jar:6.2.10]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.5.3.jar:6.5.3]
-	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233) ~[spring-security-web-6.5.3.jar:6.5.3]
-	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191) ~[spring-security-web-6.5.3.jar:6.5.3]
-	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-6.2.10.jar:6.2.10]
-	at org.springframework.web.filter.ServletRequestPathFilter.doFilter(ServletRequestPathFilter.java:52) ~[spring-web-6.2.10.jar:6.2.10]
-	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-6.2.10.jar:6.2.10]
-	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74) ~[spring-web-6.2.10.jar:6.2.10]
-	at org.springframework.security.config.annotation.web.configuration.WebSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebSecurityConfiguration.java:319) ~[spring-security-config-6.5.3.jar:6.5.3]
-	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-6.2.10.jar:6.2.10]
-	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$4(HandlerMappingIntrospector.java:267) ~[spring-webmvc-6.2.10.jar:6.2.10]
-	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-6.2.10.jar:6.2.10]
-	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74) ~[spring-web-6.2.10.jar:6.2.10]
-	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:240) ~[spring-security-config-6.5.3.jar:6.5.3]
-	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:362) ~[spring-web-6.2.10.jar:6.2.10]
-	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:278) ~[spring-web-6.2.10.jar:6.2.10]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.44.jar:10.1.44]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.44.jar:10.1.44]
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.2.10.jar:6.2.10]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.10.jar:6.2.10]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.44.jar:10.1.44]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.44.jar:10.1.44]
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.2.10.jar:6.2.10]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.10.jar:6.2.10]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.44.jar:10.1.44]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.44.jar:10.1.44]
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.2.10.jar:6.2.10]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.10.jar:6.2.10]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.44.jar:10.1.44]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.44.jar:10.1.44]
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.44.jar:10.1.44]
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.44.jar:10.1.44]
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483) ~[tomcat-embed-core-10.1.44.jar:10.1.44]
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:116) ~[tomcat-embed-core-10.1.44.jar:10.1.44]
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.44.jar:10.1.44]
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.44.jar:10.1.44]
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.44.jar:10.1.44]
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:398) ~[tomcat-embed-core-10.1.44.jar:10.1.44]
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.44.jar:10.1.44]
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903) ~[tomcat-embed-core-10.1.44.jar:10.1.44]
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1769) ~[tomcat-embed-core-10.1.44.jar:10.1.44]
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.44.jar:10.1.44]
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1189) ~[tomcat-embed-core-10.1.44.jar:10.1.44]
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:658) ~[tomcat-embed-core-10.1.44.jar:10.1.44]
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.44.jar:10.1.44]
-	at java.base/java.lang.Thread.run(Thread.java:840) ~[na:na]
-
-2025-09-25T22:51:12.901+03:00  INFO 21396 --- [Shop] [http-nio-8080-exec-5] ait.shop.logging.AspectLogging           : Method getById of class ProductServiceImpl successfully returned result: ProductDTO: id - 5, title - Melone, price - 5.90
-2025-09-25T22:53:33.921+03:00  INFO 21396 --- [Shop] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
-2025-09-25T22:53:34.050+03:00  INFO 21396 --- [Shop] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
-2025-09-25T22:53:34.053+03:00  INFO 21396 --- [Shop] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-09-25T22:53:34.054+03:00  INFO 21396 --- [Shop] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2025-09-25T22:53:34.058+03:00  INFO 21396 --- [Shop] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2025-09-25T22:59:39.833+03:00  INFO 13104 --- [Shop] [main] ait.shop.Shop51Application               : Starting Shop51Application using Java 17.0.16 with PID 13104 (C:\Users\Admin\IdeaProjects51\shop_51\target\classes started by Admin in C:\Users\Admin\IdeaProjects51\shop_51)
-2025-09-25T22:59:39.834+03:00  INFO 13104 --- [Shop] [main] ait.shop.Shop51Application               : No active profile set, falling back to 1 default profile: "default"
-2025-09-25T22:59:40.479+03:00  INFO 13104 --- [Shop] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-09-25T22:59:40.527+03:00  INFO 13104 --- [Shop] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 40 ms. Found 4 JPA repository interfaces.
-2025-09-25T22:59:41.031+03:00  INFO 13104 --- [Shop] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2025-09-25T22:59:41.041+03:00  INFO 13104 --- [Shop] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-09-25T22:59:41.043+03:00  INFO 13104 --- [Shop] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.44]
-2025-09-25T22:59:41.081+03:00  INFO 13104 --- [Shop] [main] o.a.c.c.C.[Tomcat].[localhost].[/api]    : Initializing Spring embedded WebApplicationContext
-2025-09-25T22:59:41.081+03:00  INFO 13104 --- [Shop] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1215 ms
-2025-09-25T22:59:41.208+03:00  INFO 13104 --- [Shop] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-09-25T22:59:41.318+03:00  INFO 13104 --- [Shop] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@20027c44
-2025-09-25T22:59:41.319+03:00  INFO 13104 --- [Shop] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-09-25T22:59:41.411+03:00  INFO 13104 --- [Shop] [main] liquibase.database                       : Set default schema name to public
-2025-09-25T22:59:41.747+03:00  INFO 13104 --- [Shop] [main] liquibase.changelog                      : Reading from public.databasechangelog
-2025-09-25T22:59:41.872+03:00  INFO 13104 --- [Shop] [main] liquibase.ui                             : Database is up to date, no changesets to execute
-2025-09-25T22:59:41.874+03:00  INFO 13104 --- [Shop] [main] liquibase.changelog                      : Reading from public.databasechangelog
-2025-09-25T22:59:41.885+03:00  INFO 13104 --- [Shop] [main] liquibase.util                           : UPDATE SUMMARY
-2025-09-25T22:59:41.885+03:00  INFO 13104 --- [Shop] [main] liquibase.util                           : Run:                          0
-2025-09-25T22:59:41.885+03:00  INFO 13104 --- [Shop] [main] liquibase.util                           : Previously run:              13
-2025-09-25T22:59:41.885+03:00  INFO 13104 --- [Shop] [main] liquibase.util                           : Filtered out:                 0
-2025-09-25T22:59:41.885+03:00  INFO 13104 --- [Shop] [main] liquibase.util                           : -------------------------------
-2025-09-25T22:59:41.885+03:00  INFO 13104 --- [Shop] [main] liquibase.util                           : Total change sets:           13
-2025-09-25T22:59:41.886+03:00  INFO 13104 --- [Shop] [main] liquibase.util                           : Update summary generated
-2025-09-25T22:59:41.887+03:00  INFO 13104 --- [Shop] [main] liquibase.command                        : Command execution complete
-2025-09-25T22:59:42.584+03:00  INFO 13104 --- [Shop] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-09-25T22:59:42.624+03:00  INFO 13104 --- [Shop] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.26.Final
-2025-09-25T22:59:42.655+03:00  INFO 13104 --- [Shop] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-09-25T22:59:42.866+03:00  INFO 13104 --- [Shop] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-09-25T22:59:42.946+03:00  INFO 13104 --- [Shop] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+2025-09-28T20:20:26.240+03:00  INFO 22616 --- [Shop] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-09-28T20:20:26.386+03:00  INFO 22616 --- [Shop] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-09-28T20:20:26.389+03:00  INFO 22616 --- [Shop] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-09-28T20:20:26.391+03:00  INFO 22616 --- [Shop] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-09-28T20:20:26.395+03:00  INFO 22616 --- [Shop] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-09-28T20:20:28.070+03:00  INFO 8016 --- [Shop] [main] ait.shop.Shop51Application               : Starting Shop51Application using Java 17.0.16 with PID 8016 (C:\Users\Admin\IdeaProjects51\shop_51\target\classes started by Admin in C:\Users\Admin\IdeaProjects51\shop_51)
+2025-09-28T20:20:28.072+03:00  INFO 8016 --- [Shop] [main] ait.shop.Shop51Application               : No active profile set, falling back to 1 default profile: "default"
+2025-09-28T20:20:28.674+03:00  INFO 8016 --- [Shop] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-09-28T20:20:28.723+03:00  INFO 8016 --- [Shop] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 41 ms. Found 4 JPA repository interfaces.
+2025-09-28T20:20:29.188+03:00  INFO 8016 --- [Shop] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-09-28T20:20:29.199+03:00  INFO 8016 --- [Shop] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-09-28T20:20:29.199+03:00  INFO 8016 --- [Shop] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.44]
+2025-09-28T20:20:29.235+03:00  INFO 8016 --- [Shop] [main] o.a.c.c.C.[Tomcat].[localhost].[/api]    : Initializing Spring embedded WebApplicationContext
+2025-09-28T20:20:29.236+03:00  INFO 8016 --- [Shop] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1136 ms
+2025-09-28T20:20:29.348+03:00  INFO 8016 --- [Shop] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-09-28T20:20:29.464+03:00  INFO 8016 --- [Shop] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@26d028f7
+2025-09-28T20:20:29.465+03:00  INFO 8016 --- [Shop] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-09-28T20:20:29.552+03:00  INFO 8016 --- [Shop] [main] liquibase.database                       : Set default schema name to public
+2025-09-28T20:20:29.878+03:00  INFO 8016 --- [Shop] [main] liquibase.changelog                      : Reading from public.databasechangelog
+2025-09-28T20:20:30.001+03:00  INFO 8016 --- [Shop] [main] liquibase.ui                             : Database is up to date, no changesets to execute
+2025-09-28T20:20:30.003+03:00  INFO 8016 --- [Shop] [main] liquibase.changelog                      : Reading from public.databasechangelog
+2025-09-28T20:20:30.011+03:00  INFO 8016 --- [Shop] [main] liquibase.util                           : UPDATE SUMMARY
+2025-09-28T20:20:30.012+03:00  INFO 8016 --- [Shop] [main] liquibase.util                           : Run:                          0
+2025-09-28T20:20:30.012+03:00  INFO 8016 --- [Shop] [main] liquibase.util                           : Previously run:              13
+2025-09-28T20:20:30.013+03:00  INFO 8016 --- [Shop] [main] liquibase.util                           : Filtered out:                 0
+2025-09-28T20:20:30.013+03:00  INFO 8016 --- [Shop] [main] liquibase.util                           : -------------------------------
+2025-09-28T20:20:30.013+03:00  INFO 8016 --- [Shop] [main] liquibase.util                           : Total change sets:           13
+2025-09-28T20:20:30.013+03:00  INFO 8016 --- [Shop] [main] liquibase.util                           : Update summary generated
+2025-09-28T20:20:30.014+03:00  INFO 8016 --- [Shop] [main] liquibase.command                        : Command execution complete
+2025-09-28T20:20:30.637+03:00  INFO 8016 --- [Shop] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-09-28T20:20:30.673+03:00  INFO 8016 --- [Shop] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.26.Final
+2025-09-28T20:20:30.702+03:00  INFO 8016 --- [Shop] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-09-28T20:20:30.905+03:00  INFO 8016 --- [Shop] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-09-28T20:20:30.962+03:00  INFO 8016 --- [Shop] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
 	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
 	Database driver: undefined/unknown
 	Database version: 17.6
@@ -485,190 +193,17 @@ java.lang.IllegalArgumentException: Product with id 25 does not found
 	Isolation level: undefined/unknown
 	Minimum pool size: undefined/unknown
 	Maximum pool size: undefined/unknown
-2025-09-25T22:59:43.745+03:00  INFO 13104 --- [Shop] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-09-25T22:59:43.748+03:00  INFO 13104 --- [Shop] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-09-25T22:59:44.101+03:00  WARN 13104 --- [Shop] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-09-25T22:59:44.303+03:00  INFO 13104 --- [Shop] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name userDetailServiceImpl
-2025-09-25T22:59:44.680+03:00  INFO 13104 --- [Shop] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/api'
-2025-09-25T22:59:44.688+03:00  INFO 13104 --- [Shop] [main] ait.shop.Shop51Application               : Started Shop51Application in 5.212 seconds (process running for 5.65)
-2025-09-25T23:00:02.933+03:00  INFO 13104 --- [Shop] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/api]    : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-09-25T23:00:02.933+03:00  INFO 13104 --- [Shop] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2025-09-25T23:00:02.934+03:00  INFO 13104 --- [Shop] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2025-09-25T23:00:03.282+03:00  INFO 13104 --- [Shop] [http-nio-8080-exec-1] ait.shop.logging.AspectLogging           : Method getProductById of class ProductServiceImpl successfully returned result: ProductDTO: id - 5, title - Melone, price - 5.90
-2025-09-25T23:00:29.255+03:00  WARN 13104 --- [Shop] [http-nio-8080-exec-5] ait.shop.logging.AspectLogging           : Method getProductById of class ProductServiceImpl threw an exception: Product with id 25 does not found
-2025-09-25T23:00:29.257+03:00 ERROR 13104 --- [Shop] [http-nio-8080-exec-5] o.a.c.c.C.[.[.[.[dispatcherServlet]      : Servlet.service() for servlet [dispatcherServlet] in context with path [/api] threw exception [Request processing failed: java.lang.IllegalArgumentException: Product with id 25 does not found] with root cause
-
-java.lang.IllegalArgumentException: Product with id 25 does not found
-	at ait.shop.service.ProductServiceImpl.getById(ProductServiceImpl.java:43) ~[classes/:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:569) ~[na:na]
-	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:360) ~[spring-aop-6.2.10.jar:6.2.10]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196) ~[spring-aop-6.2.10.jar:6.2.10]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-6.2.10.jar:6.2.10]
-	at org.springframework.aop.aspectj.AspectJAfterThrowingAdvice.invoke(AspectJAfterThrowingAdvice.java:64) ~[spring-aop-6.2.10.jar:6.2.10]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.2.10.jar:6.2.10]
-	at org.springframework.aop.framework.adapter.AfterReturningAdviceInterceptor.invoke(AfterReturningAdviceInterceptor.java:57) ~[spring-aop-6.2.10.jar:6.2.10]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.2.10.jar:6.2.10]
-	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97) ~[spring-aop-6.2.10.jar:6.2.10]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.2.10.jar:6.2.10]
-	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:728) ~[spring-aop-6.2.10.jar:6.2.10]
-	at ait.shop.service.ProductServiceImpl$$SpringCGLIB$$0.getById(<generated>) ~[classes/:na]
-	at ait.shop.controller.ProductController.detById(ProductController.java:53) ~[classes/:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:569) ~[na:na]
-	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:258) ~[spring-web-6.2.10.jar:6.2.10]
-	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:191) ~[spring-web-6.2.10.jar:6.2.10]
-	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.2.10.jar:6.2.10]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:991) ~[spring-webmvc-6.2.10.jar:6.2.10]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:896) ~[spring-webmvc-6.2.10.jar:6.2.10]
-	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.2.10.jar:6.2.10]
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-6.2.10.jar:6.2.10]
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.2.10.jar:6.2.10]
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.2.10.jar:6.2.10]
-	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903) ~[spring-webmvc-6.2.10.jar:6.2.10]
-	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564) ~[tomcat-embed-core-10.1.44.jar:6.0]
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.2.10.jar:6.2.10]
-	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.44.jar:6.0]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) ~[tomcat-embed-core-10.1.44.jar:10.1.44]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.44.jar:10.1.44]
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.44.jar:10.1.44]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.44.jar:10.1.44]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.44.jar:10.1.44]
-	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108) ~[spring-web-6.2.10.jar:6.2.10]
-	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108) ~[spring-web-6.2.10.jar:6.2.10]
-	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231) ~[spring-security-web-6.5.3.jar:6.5.3]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:365) ~[spring-security-web-6.5.3.jar:6.5.3]
-	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:101) ~[spring-security-web-6.5.3.jar:6.5.3]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.5.3.jar:6.5.3]
-	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:125) ~[spring-security-web-6.5.3.jar:6.5.3]
-	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:119) ~[spring-security-web-6.5.3.jar:6.5.3]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.5.3.jar:6.5.3]
-	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:131) ~[spring-security-web-6.5.3.jar:6.5.3]
-	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:85) ~[spring-security-web-6.5.3.jar:6.5.3]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.5.3.jar:6.5.3]
-	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100) ~[spring-security-web-6.5.3.jar:6.5.3]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.5.3.jar:6.5.3]
-	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179) ~[spring-security-web-6.5.3.jar:6.5.3]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.5.3.jar:6.5.3]
-	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) ~[spring-security-web-6.5.3.jar:6.5.3]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.5.3.jar:6.5.3]
-	at org.springframework.security.web.authentication.www.BasicAuthenticationFilter.doFilterInternal(BasicAuthenticationFilter.java:213) ~[spring-security-web-6.5.3.jar:6.5.3]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.10.jar:6.2.10]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.5.3.jar:6.5.3]
-	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107) ~[spring-security-web-6.5.3.jar:6.5.3]
-	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93) ~[spring-security-web-6.5.3.jar:6.5.3]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.5.3.jar:6.5.3]
-	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90) ~[spring-security-web-6.5.3.jar:6.5.3]
-	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75) ~[spring-security-web-6.5.3.jar:6.5.3]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.10.jar:6.2.10]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.5.3.jar:6.5.3]
-	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82) ~[spring-security-web-6.5.3.jar:6.5.3]
-	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69) ~[spring-security-web-6.5.3.jar:6.5.3]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.5.3.jar:6.5.3]
-	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62) ~[spring-security-web-6.5.3.jar:6.5.3]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.10.jar:6.2.10]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.5.3.jar:6.5.3]
-	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42) ~[spring-security-web-6.5.3.jar:6.5.3]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.10.jar:6.2.10]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.5.3.jar:6.5.3]
-	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233) ~[spring-security-web-6.5.3.jar:6.5.3]
-	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191) ~[spring-security-web-6.5.3.jar:6.5.3]
-	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-6.2.10.jar:6.2.10]
-	at org.springframework.web.filter.ServletRequestPathFilter.doFilter(ServletRequestPathFilter.java:52) ~[spring-web-6.2.10.jar:6.2.10]
-	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-6.2.10.jar:6.2.10]
-	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74) ~[spring-web-6.2.10.jar:6.2.10]
-	at org.springframework.security.config.annotation.web.configuration.WebSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebSecurityConfiguration.java:319) ~[spring-security-config-6.5.3.jar:6.5.3]
-	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-6.2.10.jar:6.2.10]
-	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$4(HandlerMappingIntrospector.java:267) ~[spring-webmvc-6.2.10.jar:6.2.10]
-	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-6.2.10.jar:6.2.10]
-	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74) ~[spring-web-6.2.10.jar:6.2.10]
-	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:240) ~[spring-security-config-6.5.3.jar:6.5.3]
-	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:362) ~[spring-web-6.2.10.jar:6.2.10]
-	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:278) ~[spring-web-6.2.10.jar:6.2.10]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.44.jar:10.1.44]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.44.jar:10.1.44]
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.2.10.jar:6.2.10]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.10.jar:6.2.10]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.44.jar:10.1.44]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.44.jar:10.1.44]
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.2.10.jar:6.2.10]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.10.jar:6.2.10]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.44.jar:10.1.44]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.44.jar:10.1.44]
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.2.10.jar:6.2.10]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.10.jar:6.2.10]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.44.jar:10.1.44]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.44.jar:10.1.44]
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.44.jar:10.1.44]
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.44.jar:10.1.44]
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483) ~[tomcat-embed-core-10.1.44.jar:10.1.44]
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:116) ~[tomcat-embed-core-10.1.44.jar:10.1.44]
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.44.jar:10.1.44]
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.44.jar:10.1.44]
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.44.jar:10.1.44]
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:398) ~[tomcat-embed-core-10.1.44.jar:10.1.44]
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.44.jar:10.1.44]
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903) ~[tomcat-embed-core-10.1.44.jar:10.1.44]
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1769) ~[tomcat-embed-core-10.1.44.jar:10.1.44]
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.44.jar:10.1.44]
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1189) ~[tomcat-embed-core-10.1.44.jar:10.1.44]
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:658) ~[tomcat-embed-core-10.1.44.jar:10.1.44]
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.44.jar:10.1.44]
-	at java.base/java.lang.Thread.run(Thread.java:840) ~[na:na]
-
-2025-09-25T23:01:20.314+03:00  INFO 13104 --- [Shop] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
-2025-09-25T23:01:20.438+03:00  INFO 13104 --- [Shop] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
-2025-09-25T23:01:20.442+03:00  INFO 13104 --- [Shop] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-09-25T23:01:20.444+03:00  INFO 13104 --- [Shop] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2025-09-25T23:01:20.446+03:00  INFO 13104 --- [Shop] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2025-09-25T23:01:37.889+03:00  INFO 9780 --- [Shop] [main] ait.shop.Shop51Application               : Starting Shop51Application using Java 17.0.16 with PID 9780 (C:\Users\Admin\IdeaProjects51\shop_51\target\classes started by Admin in C:\Users\Admin\IdeaProjects51\shop_51)
-2025-09-25T23:01:37.890+03:00  INFO 9780 --- [Shop] [main] ait.shop.Shop51Application               : No active profile set, falling back to 1 default profile: "default"
-2025-09-25T23:01:38.426+03:00  INFO 9780 --- [Shop] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-09-25T23:01:38.472+03:00  INFO 9780 --- [Shop] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 38 ms. Found 4 JPA repository interfaces.
-2025-09-25T23:01:38.870+03:00  INFO 9780 --- [Shop] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2025-09-25T23:01:38.880+03:00  INFO 9780 --- [Shop] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-09-25T23:01:38.880+03:00  INFO 9780 --- [Shop] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.44]
-2025-09-25T23:01:38.914+03:00  INFO 9780 --- [Shop] [main] o.a.c.c.C.[Tomcat].[localhost].[/api]    : Initializing Spring embedded WebApplicationContext
-2025-09-25T23:01:38.916+03:00  INFO 9780 --- [Shop] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 995 ms
-2025-09-25T23:01:39.036+03:00  INFO 9780 --- [Shop] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-09-25T23:01:39.136+03:00  INFO 9780 --- [Shop] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@1426370c
-2025-09-25T23:01:39.138+03:00  INFO 9780 --- [Shop] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-09-25T23:01:39.221+03:00  INFO 9780 --- [Shop] [main] liquibase.database                       : Set default schema name to public
-2025-09-25T23:01:39.520+03:00  INFO 9780 --- [Shop] [main] liquibase.changelog                      : Reading from public.databasechangelog
-2025-09-25T23:01:39.638+03:00  INFO 9780 --- [Shop] [main] liquibase.ui                             : Database is up to date, no changesets to execute
-2025-09-25T23:01:39.640+03:00  INFO 9780 --- [Shop] [main] liquibase.changelog                      : Reading from public.databasechangelog
-2025-09-25T23:01:39.648+03:00  INFO 9780 --- [Shop] [main] liquibase.util                           : UPDATE SUMMARY
-2025-09-25T23:01:39.649+03:00  INFO 9780 --- [Shop] [main] liquibase.util                           : Run:                          0
-2025-09-25T23:01:39.649+03:00  INFO 9780 --- [Shop] [main] liquibase.util                           : Previously run:              13
-2025-09-25T23:01:39.649+03:00  INFO 9780 --- [Shop] [main] liquibase.util                           : Filtered out:                 0
-2025-09-25T23:01:39.649+03:00  INFO 9780 --- [Shop] [main] liquibase.util                           : -------------------------------
-2025-09-25T23:01:39.649+03:00  INFO 9780 --- [Shop] [main] liquibase.util                           : Total change sets:           13
-2025-09-25T23:01:39.650+03:00  INFO 9780 --- [Shop] [main] liquibase.util                           : Update summary generated
-2025-09-25T23:01:39.651+03:00  INFO 9780 --- [Shop] [main] liquibase.command                        : Command execution complete
-2025-09-25T23:01:40.302+03:00  INFO 9780 --- [Shop] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-09-25T23:01:40.328+03:00  INFO 9780 --- [Shop] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.26.Final
-2025-09-25T23:01:40.348+03:00  INFO 9780 --- [Shop] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-09-25T23:01:40.515+03:00  INFO 9780 --- [Shop] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-09-25T23:01:40.581+03:00  INFO 9780 --- [Shop] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
-	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
-	Database driver: undefined/unknown
-	Database version: 17.6
-	Autocommit mode: undefined/unknown
-	Isolation level: undefined/unknown
-	Minimum pool size: undefined/unknown
-	Maximum pool size: undefined/unknown
-2025-09-25T23:01:41.197+03:00  INFO 9780 --- [Shop] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-09-25T23:01:41.200+03:00  INFO 9780 --- [Shop] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-09-25T23:01:41.522+03:00  WARN 9780 --- [Shop] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-09-25T23:01:41.687+03:00  INFO 9780 --- [Shop] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name userDetailServiceImpl
-2025-09-25T23:01:42.023+03:00  INFO 9780 --- [Shop] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/api'
-2025-09-25T23:01:42.030+03:00  INFO 9780 --- [Shop] [main] ait.shop.Shop51Application               : Started Shop51Application in 4.44 seconds (process running for 4.772)
-2025-09-25T23:02:01.714+03:00  INFO 9780 --- [Shop] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
-2025-09-25T23:02:01.839+03:00  INFO 9780 --- [Shop] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
-2025-09-25T23:02:01.842+03:00  INFO 9780 --- [Shop] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-09-25T23:02:01.843+03:00  INFO 9780 --- [Shop] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2025-09-25T23:02:01.845+03:00  INFO 9780 --- [Shop] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-09-28T20:20:31.617+03:00  INFO 8016 --- [Shop] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-09-28T20:20:31.619+03:00  INFO 8016 --- [Shop] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-09-28T20:20:31.920+03:00  WARN 8016 --- [Shop] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-09-28T20:20:32.093+03:00  INFO 8016 --- [Shop] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name userDetailServiceImpl
+2025-09-28T20:20:32.444+03:00  INFO 8016 --- [Shop] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/api'
+2025-09-28T20:20:32.451+03:00  INFO 8016 --- [Shop] [main] ait.shop.Shop51Application               : Started Shop51Application in 4.73 seconds (process running for 5.232)
+2025-09-28T20:20:36.952+03:00  INFO 8016 --- [Shop] [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/api]    : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-09-28T20:20:36.952+03:00  INFO 8016 --- [Shop] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-09-28T20:20:36.953+03:00  INFO 8016 --- [Shop] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2025-09-28T20:21:39.243+03:00  INFO 8016 --- [Shop] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-09-28T20:21:39.389+03:00  INFO 8016 --- [Shop] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-09-28T20:21:39.391+03:00  INFO 8016 --- [Shop] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-09-28T20:21:39.392+03:00  INFO 8016 --- [Shop] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-09-28T20:21:39.395+03:00  INFO 8016 --- [Shop] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

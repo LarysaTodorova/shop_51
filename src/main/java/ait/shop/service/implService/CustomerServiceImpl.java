@@ -1,4 +1,4 @@
-package ait.shop.service;
+package ait.shop.service.implService;
 
 import ait.shop.model.dto.CustomerDTO;
 import ait.shop.model.dto.ProductDTO;

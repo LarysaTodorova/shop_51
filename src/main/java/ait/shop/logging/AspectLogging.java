@@ -23,39 +23,78 @@ public class AspectLogging {
     // @Pointcut(.....calculate(int, double))  ->  такой поинткат применится только к первому методу
 
     // @Pointcut("execution(* ait.shop.service.ProductServiceImpl.saveProduct(ait.shop.model.dto.ProductDTO))")
-    @Pointcut("execution(* ait.shop.service.ProductServiceImpl.saveProduct(..))")
-    public void savedProduct() {
+//    @Pointcut("execution(* ait.shop.service.ProductServiceImpl.saveProduct(..))")
+//    public void savedProduct() {
+//    }
+//
+//    @Before("savedProduct()")
+//    public void beforeSavingProduct(JoinPoint joinPoint) {
+//        Object[] args = joinPoint.getArgs();
+//        logger.info("Method saveProduct of class ProductServiceImpl called with argument {}", args[0]);
+//    }
+//
+//    @After("savedProduct()")
+//    public void afterSavingProduct() {
+//        logger.info("Method saveProduct of class ProductServiceImpl finished its work");
+//    }
+//
+//    @Pointcut("execution(* ait.shop.service.ProductServiceImpl.getById(..))")
+//    public void getProductById() {
+//    }
+//
+//    @AfterReturning(
+//            pointcut = "getProductById()",
+//            returning = "result"
+//    )
+//    public void afterReturningProductById(Object result) {
+//        logger.info("Method getProductById of class ProductServiceImpl successfully returned result: {}", result);
+//
+//    }
+//
+//    @AfterThrowing(
+//            pointcut = "getProductById()",
+//            throwing = "e"
+//    )
+//    public void exceptionWhileGettingProductById(Exception e) {
+//        logger.warn("Method getProductById of class ProductServiceImpl threw an exception: {}", e.getMessage());
+//    }
+//
+    @Pointcut("execution(* ait.shop.service.implService.*(..))")
+    public void allServices() {
     }
 
-    @Before("savedProduct()")
-    public void beforeSavingProduct(JoinPoint joinPoint) {
+    @Before("allServices()")
+    public void beforeDoingAllServicesMethods(JoinPoint joinPoint) {
+        String className = joinPoint.getTarget().getClass().getSimpleName();
+        String methodName = joinPoint.getSignature().getName();
         Object[] args = joinPoint.getArgs();
-        logger.info("Method saveProduct of class ProductServiceImpl called with argument {}", args[0]);
+        logger.info("Class {} with method {} called with arguments {}", className, methodName, args);
     }
 
-    @After("savedProduct()")
-    public void afterSavingProduct() {
-        logger.info("Method saveProduct of class ProductServiceImpl finished its work");
-    }
-
-    @Pointcut("execution(* ait.shop.service.ProductServiceImpl.getById(..))")
-    public void getProductById() {
+    @After("allServices()")
+    public void afterDoingAllServicesMethods(JoinPoint joinPoint) {
+        String className = joinPoint.getTarget().getClass().getSimpleName();
+        String methodName = joinPoint.getSignature().getName();
+        logger.info("Class {} with method {} finished its work.", className, methodName);
     }
 
     @AfterReturning(
-            pointcut = "getProductById()",
+            pointcut = "allServices()",
             returning = "result"
     )
-    public void afterReturningProductById(Object result) {
-        logger.info("Method getProductById of class ProductServiceImpl successfully returned result: {}", result);
-
+    public void afterReturningMethod(JoinPoint joinPoint, Object result) {
+        String className = joinPoint.getTarget().getClass().getSimpleName();
+        String methodName = joinPoint.getSignature().getName();
+        logger.info("Class {} with method {} successfully returned result {}", className, methodName, result);
     }
 
     @AfterThrowing(
-            pointcut = "getProductById()",
+            pointcut = "allServices()",
             throwing = "e"
     )
-    public void exceptionWhileGettingProductById(Exception e) {
-        logger.warn("Method getProductById of class ProductServiceImpl threw an exception: {}", e.getMessage());
+    public void exceptionCaught(JoinPoint joinPoint, Exception e) {
+        String className = joinPoint.getTarget().getClass().getSimpleName();
+        String methodName = joinPoint.getSignature().getName();
+        logger.warn("Class {} with method {} failed with exception: {}", className, methodName, e.getMessage());
     }
 }

@@ -1,12 +1,10 @@
-package ait.shop.service;
+package ait.shop.service.implService;
 
 import ait.shop.model.dto.ProductDTO;
 import ait.shop.model.entity.Product;
 import ait.shop.repository.ProductRepository;
 import ait.shop.service.interfaces.ProductService;
 import ait.shop.service.mapping.ProductMappingService;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
