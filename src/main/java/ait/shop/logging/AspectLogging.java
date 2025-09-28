@@ -59,7 +59,7 @@ public class AspectLogging {
 //        logger.warn("Method getProductById of class ProductServiceImpl threw an exception: {}", e.getMessage());
 //    }
 //
-    @Pointcut("execution(* ait.shop.service.implService.*(..))")
+    @Pointcut("execution(* ait.shop.service.implService..*(..))")
     public void allServices() {
     }
 
