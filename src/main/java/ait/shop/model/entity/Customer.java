@@ -24,6 +24,21 @@ public class Customer {
     @Column
     private boolean active;
 
+
+    @OneToOne(mappedBy = "customer", cascade = CascadeType.ALL)
+    private Cart cart;
+
+    public Customer() {
+    }
+
+    public Cart getCart() {
+        return cart;
+    }
+
+    public void setCart(Cart cart) {
+        this.cart = cart;
+    }
+
     public Long getId() {
         return id;
     }
@@ -49,20 +64,20 @@ public class Customer {
     }
 
     @Override
+    public String toString() {
+        return String.format("Customer: id - %d, name - '%s', active - %s",
+                id, name, active ? "yes" : "no");
+    }
+
+    @Override
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
         Customer customer = (Customer) o;
-        return active == customer.active && Objects.equals(id, customer.id) && Objects.equals(name, customer.name);
+        return active == customer.active && Objects.equals(id, customer.id) && Objects.equals(name, customer.name) && Objects.equals(cart, customer.cart);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, active);
-    }
-
-    @Override
-    public String toString() {
-        return String.format("Customer: id - %d, name - '%s', active - %s}",
-                id, name, active ? "yes" : "no");
+        return Objects.hash(id, name, active, cart);
     }
 }
