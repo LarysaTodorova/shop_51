@@ -88,10 +88,7 @@ public class CustomerController {
         return customerService.getAverageBucketPriceFromActiveCustomers(id);
     }
 
-    @PutMapping("/bucket/{customerId}/{productId}")
-    public ProductDTO addProductInCustomerBucket(@PathVariable Long customerId, @PathVariable Long productId) {
-        return customerService.addProductInCustomersBucketIfActive(customerId, productId);
-    }
+
 
     @DeleteMapping("/from-customer-bucket/{customerId}/{productId}")
     public ProductDTO deleteProductFromCustomerBucket(@PathVariable Long customerId, @PathVariable Long productId) {

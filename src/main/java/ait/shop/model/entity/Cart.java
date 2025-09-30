@@ -17,7 +17,7 @@ public class Cart {
 
     @JsonIgnore
     @OneToOne()
-    @JoinColumn(name = "customer-id")
+    @JoinColumn(name = "customer_id")
     private Customer customer;
 
     @ManyToMany

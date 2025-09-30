@@ -47,6 +47,9 @@ public class SecurityConfig {
                         .requestMatchers(HttpMethod.GET, "/products/{id}").authenticated()
                         .requestMatchers(HttpMethod.POST, "/products").hasRole("ADMIN")
 
+                        .requestMatchers(HttpMethod.POST, "/customers").hasRole("ADMIN")
+
+
                 );
         // Собирает цепочку фильтров, которые мы прописали выше
         return http.build();

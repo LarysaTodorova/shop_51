@@ -2,10 +2,13 @@ package ait.shop.service.implService;
 
 import ait.shop.model.dto.CustomerDTO;
 import ait.shop.model.dto.ProductDTO;
+import ait.shop.model.entity.Cart;
 import ait.shop.model.entity.Customer;
 import ait.shop.repository.CustomerRepository;
 import ait.shop.service.interfaces.CustomerService;
+import ait.shop.service.interfaces.ProductService;
 import ait.shop.service.mapping.CustomerMappingService;
+import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
@@ -16,17 +19,25 @@ public class CustomerServiceImpl implements CustomerService {
 
     private final CustomerRepository repository;
     private final CustomerMappingService mapper;
+    private final ProductService productService;
 
-    public CustomerServiceImpl(CustomerRepository repository, CustomerMappingService mapper) {
+    public CustomerServiceImpl(CustomerRepository repository, CustomerMappingService mapper, ProductService productService) {
         this.repository = repository;
         this.mapper = mapper;
+        this.productService = productService;
     }
 
     @Override
+    @Transactional
     public CustomerDTO saveCustomer(CustomerDTO customerDTO) {
-        Customer customer = mapper.mapDtoToEntity(customerDTO);
-       // customer.setActive(true);
-        return mapper.mapEntityToDto(repository.save(customer));
+        Customer entity = mapper.mapDtoToEntity(customerDTO);
+
+        Cart cart = new Cart();
+        cart.setCustomer(entity);
+        entity.setCart(cart);
+
+        repository.save(entity);
+        return mapper.mapEntityToDto(entity);
     }
 
     @Override
@@ -81,10 +92,7 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     @Override
-    public ProductDTO addProductInCustomersBucketIfActive(Long customerId, Long productId) {
-        return null;
-    }
-
+    public void addProductToCustomersCart(Long customerId, Long productId) {}
     @Override
     public ProductDTO deleteProductFromCustomersBucket(Long customerId, Long productId) {
         return null;
