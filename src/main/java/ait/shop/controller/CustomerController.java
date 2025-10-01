@@ -99,4 +99,10 @@ public class CustomerController {
     public List<ProductDTO> deleteProductsFromCustomerBucket(@PathVariable Long customerId) {
         return customerService.deleteAllProductsFromActiveCustomersBucket(customerId);
     }
+
+    @PutMapping("/{customerId}/add-product/{productId}")
+    public void addProductToCustomersCart(@PathVariable Long customerId, @PathVariable Long productId) {
+        customerService.addProductToCustomersCart(customerId, productId);
+    }
+
 }

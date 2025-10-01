@@ -4,6 +4,7 @@ import ait.shop.model.dto.CustomerDTO;
 import ait.shop.model.dto.ProductDTO;
 import ait.shop.model.entity.Cart;
 import ait.shop.model.entity.Customer;
+import ait.shop.model.entity.Product;
 import ait.shop.repository.CustomerRepository;
 import ait.shop.service.interfaces.CustomerService;
 import ait.shop.service.interfaces.ProductService;
@@ -56,6 +57,12 @@ public class CustomerServiceImpl implements CustomerService {
         return mapper.mapEntityToDto(customer);
     }
 
+    private Customer getActiveCustomer(Long id) {
+        return repository.findById(id)
+                .filter(Customer::isActive)
+                .orElseThrow(() -> new IllegalArgumentException("Customer with id " + id + " not found!"));
+    }
+
     @Override
     public CustomerDTO updateCustomer(Long id, CustomerDTO customerDTO) {
         return null;
@@ -92,7 +99,13 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     @Override
-    public void addProductToCustomersCart(Long customerId, Long productId) {}
+    @Transactional
+    public void addProductToCustomersCart(Long customerId, Long productId) {
+        Customer customer = getActiveCustomer(customerId);
+        Product product = productService.getEntityById(productId);
+        customer.getCart().getProducts().add(product);
+    }
+
     @Override
     public ProductDTO deleteProductFromCustomersBucket(Long customerId, Long productId) {
         return null;

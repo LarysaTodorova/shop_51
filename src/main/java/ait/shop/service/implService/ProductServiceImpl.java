@@ -49,6 +49,13 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
+    public Product getEntityById(Long id) {
+        return repository.findById(id)
+                .filter(Product::isActive)
+                .orElseThrow(() -> new IllegalArgumentException(String.format("Product with id %d does not found", id)));
+    }
+
+    @Override
     public List<ProductDTO> getAllActiveProducts() {
 
         // У объекта логгера мы вызываем разные методы для фиксации
