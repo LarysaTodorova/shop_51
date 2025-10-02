@@ -8,6 +8,7 @@ import ait.shop.model.entity.Product;
 import ait.shop.repository.CustomerRepository;
 import ait.shop.service.interfaces.CustomerService;
 import ait.shop.service.interfaces.ProductService;
+import ait.shop.service.mapping.CartMappingService;
 import ait.shop.service.mapping.CustomerMappingService;
 import ait.shop.service.mapping.ProductMappingService;
 import jakarta.transaction.Transactional;
@@ -15,6 +16,7 @@ import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class CustomerServiceImpl implements CustomerService {
@@ -23,12 +25,14 @@ public class CustomerServiceImpl implements CustomerService {
     private final CustomerMappingService customerMapping;
     private final ProductService productService;
     private final ProductMappingService productMapping;
+    private final CartMappingService cartMapping;
 
-    public CustomerServiceImpl(CustomerRepository customerRepository, CustomerMappingService customerMapping, ProductService productService, ProductMappingService productMapping) {
+    public CustomerServiceImpl(CustomerRepository customerRepository, CustomerMappingService customerMapping, ProductService productService, ProductMappingService productMapping, CartMappingService cartMapping) {
         this.customerRepository = customerRepository;
         this.customerMapping = customerMapping;
         this.productService = productService;
         this.productMapping = productMapping;
+        this.cartMapping = cartMapping;
     }
 
 
@@ -68,9 +72,20 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     @Override
-    public CustomerDTO updateCustomer(Long id, CustomerDTO customerDTO) {
-        return null;
+    public CustomerDTO updateCustomer(CustomerDTO customerDTOForUpdate) {
 
+        if (customerDTOForUpdate.getId() == null) {
+            throw new IllegalArgumentException("Customer id must not be null");
+        }
+        Customer customer = customerRepository.findById(customerDTOForUpdate.getId())
+                .orElseThrow(() -> new IllegalArgumentException(
+                        "Customer with id " + customerDTOForUpdate.getId() + " not found!"
+                ));
+        if (customerDTOForUpdate.getName() != null)
+            customer.setName(customerDTOForUpdate.getName());
+        if (customerDTOForUpdate.getCart() != null)
+            customer.setCart(cartMapping.mapDTOtoEntity(customerDTOForUpdate.getCart()));
+        return customerMapping.mapEntityToDto(customerRepository.save(customer));
     }
 
     @Override
@@ -83,7 +98,10 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     public CustomerDTO deleteCustomerByName(String name) {
-        return null;
+        Customer customer = customerRepository.findByName(name);
+        if (customer == null) return null;
+        customerRepository.delete(customer);
+        return customerMapping.mapEntityToDto(customer);
     }
 
     @Override

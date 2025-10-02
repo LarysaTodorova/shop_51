@@ -54,8 +54,8 @@ public class CustomerController {
     }
 
     @PutMapping("/{id}")
-    public CustomerDTO updateCustomer(@PathVariable Long id, @RequestBody CustomerDTO customerDTO) {
-        return customerService.updateCustomer(id, customerDTO);
+    public CustomerDTO updateCustomer(@RequestBody CustomerDTO customerDTO) {
+        return customerService.updateCustomer(customerDTO);
     }
 
     @DeleteMapping("/{customerId}")
