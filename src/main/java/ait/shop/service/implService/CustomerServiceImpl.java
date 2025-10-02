@@ -9,6 +9,7 @@ import ait.shop.repository.CustomerRepository;
 import ait.shop.service.interfaces.CustomerService;
 import ait.shop.service.interfaces.ProductService;
 import ait.shop.service.mapping.CustomerMappingService;
+import ait.shop.service.mapping.ProductMappingService;
 import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
 
@@ -18,47 +19,50 @@ import java.util.List;
 @Service
 public class CustomerServiceImpl implements CustomerService {
 
-    private final CustomerRepository repository;
-    private final CustomerMappingService mapper;
+    private final CustomerRepository customerRepository;
+    private final CustomerMappingService customerMapping;
     private final ProductService productService;
+    private final ProductMappingService productMapping;
 
-    public CustomerServiceImpl(CustomerRepository repository, CustomerMappingService mapper, ProductService productService) {
-        this.repository = repository;
-        this.mapper = mapper;
+    public CustomerServiceImpl(CustomerRepository customerRepository, CustomerMappingService customerMapping, ProductService productService, ProductMappingService productMapping) {
+        this.customerRepository = customerRepository;
+        this.customerMapping = customerMapping;
         this.productService = productService;
+        this.productMapping = productMapping;
     }
+
 
     @Override
     @Transactional
     public CustomerDTO saveCustomer(CustomerDTO customerDTO) {
-        Customer entity = mapper.mapDtoToEntity(customerDTO);
+        Customer entity = customerMapping.mapDtoToEntity(customerDTO);
 
         Cart cart = new Cart();
         cart.setCustomer(entity);
         entity.setCart(cart);
 
-        repository.save(entity);
-        return mapper.mapEntityToDto(entity);
+        customerRepository.save(entity);
+        return customerMapping.mapEntityToDto(entity);
     }
 
     @Override
     public List<CustomerDTO> getAllActiveCustomers() {
-        return repository.findAll().stream()
+        return customerRepository.findAll().stream()
                 .filter(Customer::isActive)
-                .map(mapper::mapEntityToDto)
+                .map(customerMapping::mapEntityToDto)
                 .toList();
     }
 
     @Override
     public CustomerDTO getActiveCustomerById(Long id) {
-        Customer customer = repository.findById(id).orElse(null);
+        Customer customer = customerRepository.findById(id).orElse(null);
         if (customer == null || !customer.isActive()) return null;
 
-        return mapper.mapEntityToDto(customer);
+        return customerMapping.mapEntityToDto(customer);
     }
 
     private Customer getActiveCustomer(Long id) {
-        return repository.findById(id)
+        return customerRepository.findById(id)
                 .filter(Customer::isActive)
                 .orElseThrow(() -> new IllegalArgumentException("Customer with id " + id + " not found!"));
     }
@@ -66,11 +70,15 @@ public class CustomerServiceImpl implements CustomerService {
     @Override
     public CustomerDTO updateCustomer(Long id, CustomerDTO customerDTO) {
         return null;
+
     }
 
     @Override
     public CustomerDTO deleteCustomerById(Long id) {
-        return null;
+        Customer customer = customerRepository.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException("Customer with id " + id + " not found!"));
+        customerRepository.delete(customer);
+        return customerMapping.mapEntityToDto(customer);
     }
 
     @Override
@@ -108,7 +116,11 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     public ProductDTO deleteProductFromCustomersBucket(Long customerId, Long productId) {
-        return null;
+        Customer customer = getActiveCustomer(customerId);
+        Product product = productService.getEntityById(productId);
+        customer.getCart().getProducts().remove(product);
+        customerRepository.save(customer);
+        return productMapping.mapEntityToDto(product);
     }
 
     @Override
