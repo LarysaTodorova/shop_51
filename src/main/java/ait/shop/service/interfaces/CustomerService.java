@@ -26,7 +26,7 @@ public interface CustomerService {
 
     BigDecimal getTotalBucketPriceFromActiveCustomers();
 
-    BigDecimal getAverageBucketPriceFromActiveCustomers(Long customerId);
+    BigDecimal getAverageBucketPriceFromActiveCustomer(Long customerId);
 
     void addProductToCustomersCart(Long customerId, Long productId);
 

@@ -85,7 +85,7 @@ public class CustomerController {
 
     @GetMapping("/average-bucket-price/{id}")
     public BigDecimal getAverageBucketPrice(@PathVariable Long id) {
-        return customerService.getAverageBucketPriceFromActiveCustomers(id);
+        return customerService.getAverageBucketPriceFromActiveCustomer(id);
     }
 
 
