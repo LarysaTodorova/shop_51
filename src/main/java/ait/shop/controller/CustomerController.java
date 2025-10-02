@@ -53,7 +53,7 @@ public class CustomerController {
         return customerService.getAllActiveCustomers();
     }
 
-    @PutMapping("/{id}")
+    @PutMapping("/update")
     public CustomerDTO updateCustomer(@RequestBody CustomerDTO customerDTO) {
         return customerService.updateCustomer(customerDTO);
     }
@@ -78,9 +78,9 @@ public class CustomerController {
         return customerService.getAllActiveCustomerCount();
     }
 
-    @GetMapping("/total-bucket-price/{id}")
-    public BigDecimal getTotalBucketPrice(@PathVariable Long id) {
-        return customerService.getTotalBucketPriceFromActiveCustomers(id);
+    @GetMapping("/total-bucket-price")
+    public BigDecimal getTotalBucketPrice() {
+        return customerService.getTotalBucketPriceFromActiveCustomers();
     }
 
     @GetMapping("/average-bucket-price/{id}")
@@ -97,7 +97,7 @@ public class CustomerController {
 
     @DeleteMapping("/products-from-customer-bucket/{customerId}")
     public List<ProductDTO> deleteProductsFromCustomerBucket(@PathVariable Long customerId) {
-        return customerService.deleteAllProductsFromActiveCustomersBucket(customerId);
+        return customerService.deleteAllProductsFromActiveCustomerBucket(customerId);
     }
 
     @PutMapping("/{customerId}/add-product/{productId}")

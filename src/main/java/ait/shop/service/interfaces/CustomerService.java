@@ -24,7 +24,7 @@ public interface CustomerService {
 
     long getAllActiveCustomerCount();
 
-    BigDecimal getTotalBucketPriceFromActiveCustomers(Long customerId);
+    BigDecimal getTotalBucketPriceFromActiveCustomers();
 
     BigDecimal getAverageBucketPriceFromActiveCustomers(Long customerId);
 
@@ -32,6 +32,6 @@ public interface CustomerService {
 
     ProductDTO deleteProductFromCustomersBucket(Long customerId, Long productId);
 
-    List<ProductDTO> deleteAllProductsFromActiveCustomersBucket(Long customerId);
+    List<ProductDTO> deleteAllProductsFromActiveCustomerBucket(Long customerId);
 
 }

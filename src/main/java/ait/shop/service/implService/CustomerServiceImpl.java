@@ -15,8 +15,10 @@ import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.OptionalDouble;
 
 @Service
 public class CustomerServiceImpl implements CustomerService {
@@ -92,7 +94,8 @@ public class CustomerServiceImpl implements CustomerService {
     public CustomerDTO deleteCustomerById(Long id) {
         Customer customer = customerRepository.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("Customer with id " + id + " not found!"));
-        customerRepository.delete(customer);
+        customer.setActive(false);
+        customerRepository.save(customer);
         return customerMapping.mapEntityToDto(customer);
     }
 
@@ -100,50 +103,82 @@ public class CustomerServiceImpl implements CustomerService {
     public CustomerDTO deleteCustomerByName(String name) {
         Customer customer = customerRepository.findByName(name);
         if (customer == null) return null;
-        customerRepository.delete(customer);
+        customer.setActive(false);
+        customerRepository.save(customer);
         return customerMapping.mapEntityToDto(customer);
     }
 
     @Override
     public CustomerDTO restoreCustomerById(Long id) {
-        return null;
+        Customer customer = customerRepository.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException("Customer with id " + id + " not found!"));
+        customer.setActive(true);
+        customerRepository.save(customer);
+        return customerMapping.mapEntityToDto(customer);
     }
 
     @Override
     public long getAllActiveCustomerCount() {
-        return 0;
-    }
-
-    @Override
-    public BigDecimal getTotalBucketPriceFromActiveCustomers(Long customerId) {
-        return null;
-    }
-
-    @Override
-    public BigDecimal getAverageBucketPriceFromActiveCustomers(Long customerId) {
-        return null;
+        return customerRepository.findAll()
+                .stream()
+                .filter(Customer::isActive)
+                .count();
     }
 
     @Override
     @Transactional
-    public void addProductToCustomersCart(Long customerId, Long productId) {
-        Customer customer = getActiveCustomer(customerId);
-        Product product = productService.getEntityById(productId);
-        customer.getCart().getProducts().add(product);
+    public BigDecimal getTotalBucketPriceFromActiveCustomers() {
+        return getAllActiveCustomers().stream()
+                .filter(customer -> customer.getCart() != null)
+                .flatMap(customer -> customer.getCart().getProducts().stream())
+                .map(ProductDTO::getPrice)
+                .filter(price -> price != null)
+                .reduce(BigDecimal.ZERO, BigDecimal::add);
     }
 
     @Override
-    public ProductDTO deleteProductFromCustomersBucket(Long customerId, Long productId) {
-        Customer customer = getActiveCustomer(customerId);
-        Product product = productService.getEntityById(productId);
-        customer.getCart().getProducts().remove(product);
-        customerRepository.save(customer);
-        return productMapping.mapEntityToDto(product);
+    public BigDecimal getAverageBucketPriceFromActiveCustomers(Long customerId) {
+        OptionalDouble average = getAllActiveCustomers().stream()
+                .filter(customer -> customer.getCart() != null)
+                .flatMap(customer -> customer.getCart().getProducts().stream())
+                .map(ProductDTO::getPrice)
+                .filter(price -> price != null)
+                .mapToDouble(BigDecimal::doubleValue)
+                .average();
+        return average.isPresent()
+                ? BigDecimal.valueOf(average.getAsDouble())
+                : BigDecimal.ZERO;
+
     }
 
-    @Override
-    public List<ProductDTO> deleteAllProductsFromActiveCustomersBucket(Long customerId) {
-        return List.of();
-    }
+@Override
+@Transactional
+public void addProductToCustomersCart(Long customerId, Long productId) {
+    Customer customer = getActiveCustomer(customerId);
+    Product product = productService.getEntityById(productId);
+    customer.getCart().getProducts().add(product);
+}
+
+@Override
+@Transactional
+public ProductDTO deleteProductFromCustomersBucket(Long customerId, Long productId) {
+    Customer customer = getActiveCustomer(customerId);
+    Product product = productService.getEntityById(productId);
+    customer.getCart().getProducts().remove(product);
+    customerRepository.save(customer);
+    return productMapping.mapEntityToDto(product);
+}
+
+@Override
+@Transactional
+public List<ProductDTO> deleteAllProductsFromActiveCustomerBucket(Long customerId) {
+    Customer customer = getActiveCustomer(customerId);
+    List<Product> products = new ArrayList<>(customer.getCart().getProducts());
+    customer.getCart().getProducts().clear();
+    customerRepository.save(customer);
+    return products.stream()
+            .map(productMapping::mapEntityToDto)
+            .toList();
+}
 
 }
