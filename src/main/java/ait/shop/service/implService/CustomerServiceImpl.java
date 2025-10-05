@@ -11,7 +11,6 @@ import ait.shop.service.interfaces.ProductService;
 import ait.shop.service.mapping.CartMappingService;
 import ait.shop.service.mapping.CustomerMappingService;
 import ait.shop.service.mapping.ProductMappingService;
-import jakarta.servlet.Filter;
 import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
 
