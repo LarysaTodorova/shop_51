@@ -54,6 +54,10 @@ public class SecurityConfig {
                         .requestMatchers(HttpMethod.PUT, "/customers/update").hasRole("ADMIN")
                         .requestMatchers(HttpMethod.DELETE, "/customers/{customerId}").hasRole("ADMIN")
                         .requestMatchers(HttpMethod.DELETE, "/customers/name").hasRole("ADMIN")
+                        .requestMatchers(HttpMethod.PUT, "/customers/restore/{id}").hasRole("ADMIN")
+                        .requestMatchers(HttpMethod.GET, "/customers/active-count").hasRole("ADMIN")
+                        .requestMatchers(HttpMethod.GET, "/customers/total-bucket-price/{id}").hasAnyRole("ADMIN", "USER")
+                        .requestMatchers(HttpMethod.GET, "/customers/average-bucket-price/{id}").hasAnyRole("ADMIN", "USER")
 
                 );
         // Собирает цепочку фильтров, которые мы прописали выше

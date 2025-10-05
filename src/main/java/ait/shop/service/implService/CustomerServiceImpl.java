@@ -129,35 +129,26 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     @Transactional
-    public BigDecimal getTotalBucketPriceFromActiveCustomers() {
-        return getAllActiveCustomers().stream()
-                .filter(customer -> customer.getCart() != null)
-                .flatMap(customer -> customer.getCart().getProducts().stream())
-                .map(ProductDTO::getPrice)
-                .filter(price -> price != null)
+    public BigDecimal getTotalCartPriceFromActiveCustomer(Long customerId) {
+        Customer customer = getActiveCustomer(customerId);
+        if (customer.getCart() == null || customer.getCart().getProducts() == null) {
+            return BigDecimal.ZERO;
+        }
+        return customer.getCart().getProducts().stream()
+                .map(Product::getPrice)
                 .reduce(BigDecimal.ZERO, BigDecimal::add);
     }
 
     @Override
-    public BigDecimal getAverageBucketPriceFromActiveCustomer(Long customerId) {
-        return getAllActiveCustomers().stream()
-                .filter(customer -> customer.getId().equals(customerId)) // ищем нужного покупателя
-                .findFirst()
-                .map(customer -> {
-                    if (customer.getCart() == null || customer.getCart().getProducts().isEmpty()) {
-                        return BigDecimal.ZERO;
-                    }
-
-                    List<ProductDTO> products = customer.getCart().getProducts();
-
-                    BigDecimal sum = products.stream()
-                            .map(ProductDTO::getPrice)
-                            .filter(price -> price != null)
-                            .reduce(BigDecimal.ZERO, BigDecimal::add);
-
-                    return sum.divide(BigDecimal.valueOf(products.size()), 2, RoundingMode.HALF_UP);
-                })
-                .orElse(BigDecimal.ZERO);
+    @Transactional
+    public BigDecimal getAverageCartPriceFromActiveCustomer(Long customerId) {
+        Customer customer = getActiveCustomer(customerId);
+        if (customer.getCart() == null || customer.getCart().getProducts() == null) {
+            return BigDecimal.ZERO;
+        }
+        BigDecimal total = getTotalCartPriceFromActiveCustomer(customerId);
+        int count = customer.getCart().getProducts().size();
+        return total.divide(BigDecimal.valueOf(count), 2, RoundingMode.HALF_UP);
     }
 
     @Override
@@ -170,7 +161,7 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     @Transactional
-    public ProductDTO deleteProductFromCustomersBucket(Long customerId, Long productId) {
+    public ProductDTO deleteProductFromCustomerCart(Long customerId, Long productId) {
         Customer customer = getActiveCustomer(customerId);
         Product product = productService.getEntityById(productId);
         customer.getCart().getProducts().remove(product);
@@ -180,7 +171,7 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     @Transactional
-    public List<ProductDTO> deleteAllProductsFromActiveCustomerBucket(Long customerId) {
+    public List<ProductDTO> deleteAllProductsFromActiveCustomerCart(Long customerId) {
         Customer customer = getActiveCustomer(customerId);
         List<Product> products = new ArrayList<>(customer.getCart().getProducts());
         customer.getCart().getProducts().clear();

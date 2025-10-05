@@ -24,14 +24,14 @@ public interface CustomerService {
 
     long getAllActiveCustomerCount();
 
-    BigDecimal getTotalBucketPriceFromActiveCustomers();
+    BigDecimal getTotalCartPriceFromActiveCustomer(Long customerId);
 
-    BigDecimal getAverageBucketPriceFromActiveCustomer(Long customerId);
+    BigDecimal getAverageCartPriceFromActiveCustomer(Long customerId);
 
     void addProductToCustomersCart(Long customerId, Long productId);
 
-    ProductDTO deleteProductFromCustomersBucket(Long customerId, Long productId);
+    ProductDTO deleteProductFromCustomerCart(Long customerId, Long productId);
 
-    List<ProductDTO> deleteAllProductsFromActiveCustomerBucket(Long customerId);
+    List<ProductDTO> deleteAllProductsFromActiveCustomerCart(Long customerId);
 
 }
