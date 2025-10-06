@@ -1,7 +1,6 @@
 package ait.shop.controller;
 
 import ait.shop.model.dto.CustomerDTO;
-import ait.shop.model.dto.ProductDTO;
 import ait.shop.service.interfaces.CustomerService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
