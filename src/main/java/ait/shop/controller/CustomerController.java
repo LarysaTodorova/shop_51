@@ -89,8 +89,7 @@ public class CustomerController {
     }
 
 
-
-    @DeleteMapping("/from-customer-bucket/{customerId}/{productId}")
+    @DeleteMapping("{customerId}/from-customer-bucket/{productId}")
     public ProductDTO deleteProductFromCustomerBucket(@PathVariable Long customerId, @PathVariable Long productId) {
         return customerService.deleteProductFromCustomerCart(customerId, productId);
     }
