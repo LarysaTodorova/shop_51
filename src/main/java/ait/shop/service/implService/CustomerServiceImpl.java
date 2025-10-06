@@ -1,22 +1,18 @@
 package ait.shop.service.implService;
 
 import ait.shop.model.dto.CustomerDTO;
-import ait.shop.model.dto.ProductDTO;
 import ait.shop.model.entity.Cart;
 import ait.shop.model.entity.Customer;
 import ait.shop.model.entity.Product;
 import ait.shop.repository.CustomerRepository;
 import ait.shop.service.interfaces.CustomerService;
 import ait.shop.service.interfaces.ProductService;
-import ait.shop.service.mapping.CartMappingService;
 import ait.shop.service.mapping.CustomerMappingService;
-import ait.shop.service.mapping.ProductMappingService;
 import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
-import java.util.ArrayList;
 import java.util.List;
 
 
@@ -26,19 +22,12 @@ public class CustomerServiceImpl implements CustomerService {
     private final CustomerRepository customerRepository;
     private final CustomerMappingService customerMapping;
     private final ProductService productService;
-    private final ProductMappingService productMapping;
-    private final CartMappingService cartMapping;
 
-
-    public CustomerServiceImpl(CustomerRepository customerRepository, CustomerMappingService customerMapping, ProductService productService, ProductMappingService productMapping, CartMappingService cartMapping) {
+    public CustomerServiceImpl(CustomerRepository customerRepository, CustomerMappingService customerMapping, ProductService productService) {
         this.customerRepository = customerRepository;
         this.customerMapping = customerMapping;
         this.productService = productService;
-        this.productMapping = productMapping;
-        this.cartMapping = cartMapping;
-
     }
-
 
     @Override
     @Transactional
@@ -63,9 +52,7 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     public CustomerDTO getActiveCustomerById(Long id) {
-        Customer customer = customerRepository.findById(id).orElse(null);
-        if (customer == null || !customer.isActive()) return null;
-
+        Customer customer = getActiveCustomer(id);
         return customerMapping.mapEntityToDto(customer);
     }
 
@@ -76,46 +63,43 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     @Override
+    @Transactional
     public CustomerDTO updateCustomer(CustomerDTO customerDTOForUpdate) {
 
         if (customerDTOForUpdate.getId() == null) {
             throw new IllegalArgumentException("Customer id must not be null");
         }
-        Customer customer = customerRepository.findById(customerDTOForUpdate.getId())
-                .orElseThrow(() -> new IllegalArgumentException(
-                        "Customer with id " + customerDTOForUpdate.getId() + " not found!"
-                ));
+        Customer customer = getActiveCustomer(customerDTOForUpdate.getId());
+
         if (customerDTOForUpdate.getName() != null)
             customer.setName(customerDTOForUpdate.getName());
-        if (customerDTOForUpdate.getCart() != null)
-            customer.setCart(cartMapping.mapDTOtoEntity(customerDTOForUpdate.getCart()));
-        return customerMapping.mapEntityToDto(customerRepository.save(customer));
+        return customerMapping.mapEntityToDto(customer);
     }
 
     @Override
+    @Transactional
     public CustomerDTO deleteCustomerById(Long id) {
         Customer customer = customerRepository.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("Customer with id " + id + " not found!"));
         customer.setActive(false);
-        customerRepository.save(customer);
         return customerMapping.mapEntityToDto(customer);
     }
 
     @Override
+    @Transactional
     public CustomerDTO deleteCustomerByName(String name) {
         Customer customer = customerRepository.findByName(name);
         if (customer == null) return null;
         customer.setActive(false);
-        customerRepository.save(customer);
         return customerMapping.mapEntityToDto(customer);
     }
 
     @Override
+    @Transactional
     public CustomerDTO restoreCustomerById(Long id) {
         Customer customer = customerRepository.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("Customer with id " + id + " not found!"));
         customer.setActive(true);
-        customerRepository.save(customer);
         return customerMapping.mapEntityToDto(customer);
     }
 
@@ -135,20 +119,23 @@ public class CustomerServiceImpl implements CustomerService {
             return BigDecimal.ZERO;
         }
         return customer.getCart().getProducts().stream()
+                .filter(Product::isActive)
                 .map(Product::getPrice)
                 .reduce(BigDecimal.ZERO, BigDecimal::add);
     }
 
     @Override
     @Transactional
-    public BigDecimal getAverageCartPriceFromActiveCustomer(Long customerId) {
+    public double getAverageCartPriceFromActiveCustomer(Long customerId) {
         Customer customer = getActiveCustomer(customerId);
-        if (customer.getCart() == null || customer.getCart().getProducts() == null) {
-            return BigDecimal.ZERO;
-        }
-        BigDecimal total = getTotalCartPriceFromActiveCustomer(customerId);
-        int count = customer.getCart().getProducts().size();
-        return total.divide(BigDecimal.valueOf(count), 2, RoundingMode.HALF_UP);
+        return customer
+                .getCart()
+                .getProducts()
+                .stream()
+                .filter(Product::isActive)
+                .mapToDouble(product -> product.getPrice().doubleValue())
+                .average()
+                .orElse(0.0);
     }
 
     @Override
@@ -161,24 +148,19 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     @Transactional
-    public ProductDTO deleteProductFromCustomerCart(Long customerId, Long productId) {
+    public void deleteProductFromCustomerCart(Long customerId, Long productId) {
         Customer customer = getActiveCustomer(customerId);
         Product product = productService.getEntityById(productId);
         customer.getCart().getProducts().remove(product);
-        customerRepository.save(customer);
-        return productMapping.mapEntityToDto(product);
     }
 
     @Override
     @Transactional
-    public List<ProductDTO> deleteAllProductsFromActiveCustomerCart(Long customerId) {
+    public void deleteAllProductsFromActiveCustomerCart(Long customerId) {
         Customer customer = getActiveCustomer(customerId);
-        List<Product> products = new ArrayList<>(customer.getCart().getProducts());
-        customer.getCart().getProducts().clear();
-        customerRepository.save(customer);
-        return products.stream()
-                .map(productMapping::mapEntityToDto)
-                .toList();
+        if (customer.getCart().getProducts() != null) {
+            customer.getCart().getProducts().clear();
+        }
     }
 
 }

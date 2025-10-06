@@ -84,19 +84,19 @@ public class CustomerController {
     }
 
     @GetMapping("/average-bucket-price/{id}")
-    public BigDecimal getAverageBucketPrice(@PathVariable Long id) {
+    public double getAverageBucketPrice(@PathVariable Long id) {
         return customerService.getAverageCartPriceFromActiveCustomer(id);
     }
 
 
     @DeleteMapping("{customerId}/from-customer-bucket/{productId}")
-    public ProductDTO deleteProductFromCustomerBucket(@PathVariable Long customerId, @PathVariable Long productId) {
-        return customerService.deleteProductFromCustomerCart(customerId, productId);
+    public void deleteProductFromCustomerBucket(@PathVariable Long customerId, @PathVariable Long productId) {
+        customerService.deleteProductFromCustomerCart(customerId, productId);
     }
 
     @DeleteMapping("/products-from-customer-bucket/{customerId}")
-    public List<ProductDTO> deleteProductsFromCustomerBucket(@PathVariable Long customerId) {
-        return customerService.deleteAllProductsFromActiveCustomerCart(customerId);
+    public void deleteProductsFromCustomerBucket(@PathVariable Long customerId) {
+        customerService.deleteAllProductsFromActiveCustomerCart(customerId);
     }
 
     @PutMapping("/{customerId}/add-product/{productId}")

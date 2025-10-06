@@ -26,12 +26,12 @@ public interface CustomerService {
 
     BigDecimal getTotalCartPriceFromActiveCustomer(Long customerId);
 
-    BigDecimal getAverageCartPriceFromActiveCustomer(Long customerId);
+    double getAverageCartPriceFromActiveCustomer(Long customerId);
 
     void addProductToCustomersCart(Long customerId, Long productId);
 
-    ProductDTO deleteProductFromCustomerCart(Long customerId, Long productId);
+    void deleteProductFromCustomerCart(Long customerId, Long productId);
 
-    List<ProductDTO> deleteAllProductsFromActiveCustomerCart(Long customerId);
+    void deleteAllProductsFromActiveCustomerCart(Long customerId);
 
 }

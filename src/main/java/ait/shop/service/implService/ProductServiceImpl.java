@@ -5,6 +5,7 @@ import ait.shop.model.entity.Product;
 import ait.shop.repository.ProductRepository;
 import ait.shop.service.interfaces.ProductService;
 import ait.shop.service.mapping.ProductMappingService;
+import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
@@ -78,8 +79,11 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
+    @Transactional
     public ProductDTO deleteProduct(Long id) {
-        return null;
+       Product product = getEntityById(id);
+       product.setActive(false);
+       return mapper.mapEntityToDto(product);
     }
 
     @Override
