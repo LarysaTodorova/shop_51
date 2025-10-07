@@ -2,6 +2,7 @@ package ait.shop.model.entity;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.*;
 
 import java.math.BigDecimal;
 import java.util.Objects;
@@ -17,12 +18,34 @@ public class Product {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    /*
+Мы хотим, чтобы название продукта соответствовало определённым требованиям:
+1. Не должно быть короче трёх символов
+2. Не должно содержать цифры и спец.символы.
+3. Первая буква должна быть в верхнем регистре.
+4. Остальные буквы должны быть в нижнем регистре.
+ */
     @Schema(description = "Product title", example = "Banana")
     @Column(name = "title")
+    @NotNull(message = "Product title cannot be null")
+    @NotBlank(message = "Product title cannot be blank")
+    @Pattern(
+            regexp = "[A-Z][a-z ]{2,}",
+            message = "Product title should be at least three characters length and start with capital letters"
+    )
     private String title;
 
     @Schema(description = "Product price", example = "3.50")
     @Column(name = "price")
+    @DecimalMin(
+            value = "1.00",
+            message = "Product price should be greater or equal to 1.00"
+    )
+    @DecimalMax(
+            value = "1000.00",
+            inclusive = false,
+            message = "Product price should be lesser than 1000.00"
+    )
     private BigDecimal price;
 
     // CreatedAt -> created_at

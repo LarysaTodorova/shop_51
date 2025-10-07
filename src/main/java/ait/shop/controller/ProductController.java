@@ -1,5 +1,7 @@
 package ait.shop.controller;
 
+import ait.shop.exception.Response;
+import ait.shop.exception.handling.exceptions.ProductNotFoundException;
 import ait.shop.model.dto.ProductDTO;
 import ait.shop.service.interfaces.ProductService;
 import io.swagger.v3.oas.annotations.Operation;
@@ -9,6 +11,8 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.math.BigDecimal;
@@ -49,7 +53,7 @@ public class ProductController {
     })
     @GetMapping("/{id}")
     public ProductDTO detById(@Parameter(description = "The id that needs to be fetched.", required = true)
-                           @PathVariable Long id) {
+                              @PathVariable Long id) {
         return service.getById(id);
     }
 
@@ -98,6 +102,26 @@ public class ProductController {
     public BigDecimal getAveragePrice() {
         return service.getAveragePrice();
     }
+
+//    @ExceptionHandler(ProductNotFoundException.class)
+//    public ResponseEntity<String> handleException(ProductNotFoundException e) {
+//        return new ResponseEntity<>(e.getMessage(), HttpStatus.NOT_FOUND);
+//    }
+
+    //    @ExceptionHandler(ProductNotFoundException.class)
+//    @ResponseStatus(HttpStatus.NOT_FOUND)
+//    public String handleException(ProductNotFoundException e) {
+//        return e.getMessage();
+//    }
+//     1 способ
+//    // ПЛЮС - мы создаем обработчик ошибок под конкретно взятый контроллер,
+//    //        это удобно, когда нам нужна разная логика обработки ошибок для разных контроллеров
+//    // МИНУС -
+//    @ExceptionHandler(ProductNotFoundException.class)
+//    @ResponseStatus(HttpStatus.NOT_FOUND)
+//    public Response handleException(ProductNotFoundException e) {
+//        return new Response(e.getMessage());
+//    }
 
 }
 

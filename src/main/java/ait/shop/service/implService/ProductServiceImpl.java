@@ -1,5 +1,6 @@
 package ait.shop.service.implService;
 
+import ait.shop.exception.handling.exceptions.ProductNotFoundException;
 import ait.shop.model.dto.ProductDTO;
 import ait.shop.model.entity.Product;
 import ait.shop.repository.ProductRepository;
@@ -36,24 +37,27 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public ProductDTO getById(Long id) {
-
-        Product product = repository.findById(id).orElse(null);
-
-        if (product == null || !product.isActive()) {
-            throw new IllegalArgumentException(String.format("Product with id %d does not found", id));
-        }
-
-        // true || ? -> true
-        // true | NPE -> true
-        // true || ? ->
+        Product product = getEntityById(id);
         return mapper.mapEntityToDto(product);
+// Старая версия кода
+//        Product product = repository.findById(id).orElse(null);
+//
+//        if (product == null || !product.isActive()) {
+//            throw new IllegalArgumentException(String.format("Product with id %d does not found", id));
+//        }
+//
+//        // true || ? -> true
+//        // true | NPE -> true
+//        // true || ? ->
+//        return mapper.mapEntityToDto(product);
+
     }
 
     @Override
     public Product getEntityById(Long id) {
         return repository.findById(id)
                 .filter(Product::isActive)
-                .orElseThrow(() -> new IllegalArgumentException(String.format("Product with id %d does not found", id)));
+                .orElseThrow(() -> new ProductNotFoundException(id));
     }
 
     @Override
@@ -81,9 +85,9 @@ public class ProductServiceImpl implements ProductService {
     @Override
     @Transactional
     public ProductDTO deleteProduct(Long id) {
-       Product product = getEntityById(id);
-       product.setActive(false);
-       return mapper.mapEntityToDto(product);
+        Product product = getEntityById(id);
+        product.setActive(false);
+        return mapper.mapEntityToDto(product);
     }
 
     @Override
