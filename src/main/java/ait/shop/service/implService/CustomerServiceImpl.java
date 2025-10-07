@@ -89,7 +89,9 @@ public class CustomerServiceImpl implements CustomerService {
     @Transactional
     public CustomerDTO deleteCustomerByName(String name) {
         Customer customer = customerRepository.findByName(name);
-        if (customer == null) return null;
+        if (customer == null) {
+           throw new IllegalArgumentException("Customer with name " + name + " not found!");
+        }
         customer.setActive(false);
         return customerMapping.mapEntityToDto(customer);
     }
