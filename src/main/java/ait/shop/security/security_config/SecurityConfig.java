@@ -66,6 +66,8 @@ public class SecurityConfig {
                         .requestMatchers(HttpMethod.DELETE, "/customers/products-from-customer-bucket/{customerId}")
                         .hasAnyRole("ADMIN", "USER")
 
+                        .requestMatchers(HttpMethod.GET, "/hello").permitAll()
+
                 );
         // Собирает цепочку фильтров, которые мы прописали выше
         return http.build();
