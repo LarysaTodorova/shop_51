@@ -1,6 +1,5 @@
 package ait.shop.exception.handling;
 
-import ait.shop.exception.Response;
 import ait.shop.exception.handling.exceptions.ProductNotFoundException;
 import jakarta.validation.ConstraintViolation;
 import jakarta.validation.ConstraintViolationException;

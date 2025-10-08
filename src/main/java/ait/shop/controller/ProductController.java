@@ -1,7 +1,5 @@
 package ait.shop.controller;
 
-import ait.shop.exception.Response;
-import ait.shop.exception.handling.exceptions.ProductNotFoundException;
 import ait.shop.model.dto.ProductDTO;
 import ait.shop.service.interfaces.ProductService;
 import io.swagger.v3.oas.annotations.Operation;
@@ -11,8 +9,6 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.math.BigDecimal;
