@@ -1,6 +1,6 @@
 package ait.shop.service.implService;
 
-import ait.shop.exception.handling.exceptions.ProductNotFoundException;
+import ait.shop.exception.handling.exceptions.product.ProductNotFoundException;
 import ait.shop.model.dto.ProductDTO;
 import ait.shop.model.entity.Product;
 import ait.shop.repository.ProductRepository;

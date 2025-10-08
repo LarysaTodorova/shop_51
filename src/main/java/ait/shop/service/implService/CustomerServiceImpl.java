@@ -1,5 +1,6 @@
 package ait.shop.service.implService;
 
+import ait.shop.exception.handling.exceptions.customer.CustomerNotFoundException;
 import ait.shop.model.dto.CustomerDTO;
 import ait.shop.model.entity.Cart;
 import ait.shop.model.entity.Customer;
@@ -12,7 +13,6 @@ import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
-import java.math.RoundingMode;
 import java.util.List;
 
 
@@ -59,28 +59,30 @@ public class CustomerServiceImpl implements CustomerService {
     private Customer getActiveCustomer(Long id) {
         return customerRepository.findById(id)
                 .filter(Customer::isActive)
-                .orElseThrow(() -> new IllegalArgumentException("Customer with id " + id + " not found!"));
+                .orElseThrow(() -> new CustomerNotFoundException(id));
     }
 
     @Override
     @Transactional
-    public CustomerDTO updateCustomer(CustomerDTO customerDTOForUpdate) {
+    public CustomerDTO updateCustomer(Long id, CustomerDTO customerDTOForUpdate) {
 
-        if (customerDTOForUpdate.getId() == null) {
-            throw new IllegalArgumentException("Customer id must not be null");
-        }
-        Customer customer = getActiveCustomer(customerDTOForUpdate.getId());
-
-        if (customerDTOForUpdate.getName() != null)
-            customer.setName(customerDTOForUpdate.getName());
+//        if (customerDTOForUpdate.getId() == null) {
+//            throw new CustomerNotFoundException(customerDTOForUpdate.getId());
+//        }
+//        Customer customer = getActiveCustomer(customerDTOForUpdate.getId());
+//
+//        if (customerDTOForUpdate.getName() != null)
+//            customer.setName(customerDTOForUpdate.getName());
+//        return customerMapping.mapEntityToDto(customer);
+        Customer customer = getActiveCustomer(id);
+        customer.setName(customerDTOForUpdate.getName());
         return customerMapping.mapEntityToDto(customer);
     }
 
     @Override
     @Transactional
     public CustomerDTO deleteCustomerById(Long id) {
-        Customer customer = customerRepository.findById(id)
-                .orElseThrow(() -> new IllegalArgumentException("Customer with id " + id + " not found!"));
+        Customer customer = getActiveCustomer(id);
         customer.setActive(false);
         return customerMapping.mapEntityToDto(customer);
     }
@@ -90,7 +92,7 @@ public class CustomerServiceImpl implements CustomerService {
     public CustomerDTO deleteCustomerByName(String name) {
         Customer customer = customerRepository.findByName(name);
         if (customer == null) {
-           throw new IllegalArgumentException("Customer with name " + name + " not found!");
+            throw new CustomerNotFoundException(name);
         }
         customer.setActive(false);
         return customerMapping.mapEntityToDto(customer);
@@ -100,7 +102,7 @@ public class CustomerServiceImpl implements CustomerService {
     @Transactional
     public CustomerDTO restoreCustomerById(Long id) {
         Customer customer = customerRepository.findById(id)
-                .orElseThrow(() -> new IllegalArgumentException("Customer with id " + id + " not found!"));
+                .orElseThrow(() -> new CustomerNotFoundException(id));
         customer.setActive(true);
         return customerMapping.mapEntityToDto(customer);
     }

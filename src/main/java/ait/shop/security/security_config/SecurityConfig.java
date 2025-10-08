@@ -52,7 +52,7 @@ public class SecurityConfig {
                         .requestMatchers(HttpMethod.GET, "/customers").hasAnyRole("USER", "ADMIN")
                         .requestMatchers(HttpMethod.PUT, "/customers/{customerId}/add-product/{productId}")
                         .hasAnyRole("USER", "ADMIN")
-                        .requestMatchers(HttpMethod.PUT, "/customers/update").hasRole("ADMIN")
+                        .requestMatchers(HttpMethod.PUT, "/customers/{id}/update").hasRole("ADMIN")
                         .requestMatchers(HttpMethod.DELETE, "/customers/{customerId}").hasRole("ADMIN")
                         .requestMatchers(HttpMethod.DELETE, "/customers/name").hasRole("ADMIN")
                         .requestMatchers(HttpMethod.PUT, "/customers/restore/{id}").hasRole("ADMIN")

@@ -14,7 +14,7 @@ public interface CustomerService {
 
     CustomerDTO getActiveCustomerById(Long id);
 
-    CustomerDTO updateCustomer(CustomerDTO customer);
+    CustomerDTO updateCustomer(Long id,CustomerDTO customer);
 
     CustomerDTO deleteCustomerById(Long id);
 

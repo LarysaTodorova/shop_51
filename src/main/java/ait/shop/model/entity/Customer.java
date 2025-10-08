@@ -2,6 +2,9 @@ package ait.shop.model.entity;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Pattern;
 
 import java.util.Objects;
 
@@ -18,6 +21,12 @@ public class Customer {
 
     @Schema(description = "Customer name", example = "Luisa")
     @Column(name = "name")
+    @NotNull(message = "Customer name cannot be null")
+    @NotBlank(message = "Customer name cannot be blank")
+    @Pattern(
+            regexp = "[A-Z][a-z ]{2,11}",
+            message = "Customer name should be at least three characters and maximum 12 characters length, and start with capital letters"
+    )
     private String name;
 
     @Schema(description = "Is customer available", accessMode = Schema.AccessMode.READ_ONLY)

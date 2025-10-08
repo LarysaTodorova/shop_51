@@ -1,6 +1,7 @@
 package ait.shop.exception.handling;
 
-import ait.shop.exception.handling.exceptions.ProductNotFoundException;
+import ait.shop.exception.handling.exceptions.customer.CustomerNotFoundException;
+import ait.shop.exception.handling.exceptions.product.ProductNotFoundException;
 import jakarta.validation.ConstraintViolation;
 import jakarta.validation.ConstraintViolationException;
 import org.slf4j.Logger;
@@ -9,10 +10,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
-import org.springframework.web.bind.annotation.ResponseStatus;
 
 import java.util.List;
-import java.util.Set;
 
 @ControllerAdvice
 public class GlobalExceptionHandler {
@@ -53,5 +52,13 @@ public class GlobalExceptionHandler {
                 .map(ConstraintViolation::getMessage)
                 .toList(),
                 HttpStatus.BAD_REQUEST);
+    }
+
+    @ExceptionHandler(CustomerNotFoundException.class)
+    public ResponseEntity<String> handleException(CustomerNotFoundException e) {
+        String message = e.getMessage();
+        logger.warn(message);
+        return new ResponseEntity<>(message, HttpStatus.NOT_FOUND);
+
     }
 }

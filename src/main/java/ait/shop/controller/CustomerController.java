@@ -52,9 +52,9 @@ public class CustomerController {
         return customerService.getAllActiveCustomers();
     }
 
-    @PutMapping("/update")
-    public CustomerDTO updateCustomer(@RequestBody CustomerDTO customerDTO) {
-        return customerService.updateCustomer(customerDTO);
+    @PutMapping("/{id}/update")
+    public CustomerDTO updateCustomer(@PathVariable Long id, @RequestBody CustomerDTO customerDTO) {
+        return customerService.updateCustomer(id, customerDTO);
     }
 
     @DeleteMapping("/{customerId}")
