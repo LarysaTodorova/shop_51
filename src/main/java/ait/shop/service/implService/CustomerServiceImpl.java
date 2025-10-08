@@ -65,15 +65,6 @@ public class CustomerServiceImpl implements CustomerService {
     @Override
     @Transactional
     public CustomerDTO updateCustomer(Long id, CustomerDTO customerDTOForUpdate) {
-
-//        if (customerDTOForUpdate.getId() == null) {
-//            throw new CustomerNotFoundException(customerDTOForUpdate.getId());
-//        }
-//        Customer customer = getActiveCustomer(customerDTOForUpdate.getId());
-//
-//        if (customerDTOForUpdate.getName() != null)
-//            customer.setName(customerDTOForUpdate.getName());
-//        return customerMapping.mapEntityToDto(customer);
         Customer customer = getActiveCustomer(id);
         customer.setName(customerDTOForUpdate.getName());
         return customerMapping.mapEntityToDto(customer);
