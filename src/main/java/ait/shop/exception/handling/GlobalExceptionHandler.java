@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
+import java.util.List;
 import java.util.Set;
 
 @ControllerAdvice
@@ -27,9 +28,17 @@ public class GlobalExceptionHandler {
 //        return new ResponseEntity<>(response, HttpStatus.NOT_FOUND);
 //    }
 
-    // Способ 3
+    /*
+     Способ 3
+     ПЛЮС -  мы создаём глобальный обработчик ошибок, который умеет ловить
+             ошибки, возникающие в любом классе и методе нашего проекта
+     ПЛЮС -  логика обработки ошибок выносится в отдельный класс, а основная
+             бизнес-логика проекта не нагружена дополнительной вспомогательной логикой
+     МИНУС - такой способ не подходит, если нам нужна разная обработка одних и
+             тех же ошибок для разных контроллеров. В таком случае можно
+             воспользоваться способом 1
+      */
     @ExceptionHandler(ProductNotFoundException.class)
-    @ResponseStatus(HttpStatus.NOT_FOUND)
     public ResponseEntity<String> handleException(ProductNotFoundException e) {
         String message = e.getMessage();
         logger.warn(message);
@@ -37,9 +46,12 @@ public class GlobalExceptionHandler {
     }
 
     @ExceptionHandler(ConstraintViolationException.class)
-    public ResponseEntity<Set<ConstraintViolation<?>>> handleException(ConstraintViolationException e) {
-        Set<ConstraintViolation<?>> constraintViolations = e.getConstraintViolations();
-        logger.warn("{}", constraintViolations);
-        return new ResponseEntity<>(constraintViolations, HttpStatus.BAD_REQUEST);
+    public ResponseEntity<List<String>> handleException(ConstraintViolationException e) {
+        return new ResponseEntity<>(e
+                .getConstraintViolations()
+                .stream()
+                .map(ConstraintViolation::getMessage)
+                .toList(),
+                HttpStatus.BAD_REQUEST);
     }
 }
