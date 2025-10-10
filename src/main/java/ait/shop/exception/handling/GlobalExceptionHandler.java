@@ -10,6 +10,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.yaml.snakeyaml.reader.ReaderException;
 
 import java.util.List;
 
@@ -59,6 +60,13 @@ public class GlobalExceptionHandler {
         String message = e.getMessage();
         logger.warn(message);
         return new ResponseEntity<>(message, HttpStatus.NOT_FOUND);
+    }
+
+    @ExceptionHandler(ReaderException.class)
+    public ResponseEntity<String> handleException(ReaderException e) {
+        String message = e.getMessage();
+        logger.warn(message);
+        return new ResponseEntity<>(message, HttpStatus.BAD_REQUEST);
 
     }
 }

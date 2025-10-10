@@ -68,6 +68,8 @@ public class SecurityConfig {
 
                         .requestMatchers(HttpMethod.GET, "/hello").permitAll()
 
+                        .requestMatchers(HttpMethod.POST, "/register").permitAll()
+
                 );
         // Собирает цепочку фильтров, которые мы прописали выше
         return http.build();
