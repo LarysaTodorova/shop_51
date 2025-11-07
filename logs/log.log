@@ -1,0 +1,46 @@
+2025-11-07T20:29:13.637+02:00  INFO 21712 --- [Shop] [main] ait.shop.Shop51Application               : Starting Shop51Application using Java 17.0.16 with PID 21712 (C:\Users\Admin\IdeaProjects51\shop_51\target\classes started by Admin in C:\Users\Admin\IdeaProjects51\shop_51)
+2025-11-07T20:29:13.642+02:00  INFO 21712 --- [Shop] [main] ait.shop.Shop51Application               : The following 1 profile is active: "dev"
+2025-11-07T20:29:14.372+02:00  INFO 21712 --- [Shop] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-11-07T20:29:14.427+02:00  INFO 21712 --- [Shop] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 47 ms. Found 5 JPA repository interfaces.
+2025-11-07T20:29:14.972+02:00  INFO 21712 --- [Shop] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-11-07T20:29:14.992+02:00  INFO 21712 --- [Shop] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-11-07T20:29:14.992+02:00  INFO 21712 --- [Shop] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.44]
+2025-11-07T20:29:15.048+02:00  INFO 21712 --- [Shop] [main] o.a.c.c.C.[Tomcat].[localhost].[/api]    : Initializing Spring embedded WebApplicationContext
+2025-11-07T20:29:15.049+02:00  INFO 21712 --- [Shop] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1373 ms
+2025-11-07T20:29:15.196+02:00  INFO 21712 --- [Shop] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-11-07T20:29:15.348+02:00  INFO 21712 --- [Shop] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@3070f3e6
+2025-11-07T20:29:15.349+02:00  INFO 21712 --- [Shop] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-11-07T20:29:15.468+02:00  INFO 21712 --- [Shop] [main] liquibase.database                       : Set default schema name to public
+2025-11-07T20:29:15.836+02:00  INFO 21712 --- [Shop] [main] liquibase.changelog                      : Reading from public.databasechangelog
+2025-11-07T20:29:16.013+02:00  INFO 21712 --- [Shop] [main] liquibase.ui                             : Database is up to date, no changesets to execute
+2025-11-07T20:29:16.015+02:00  INFO 21712 --- [Shop] [main] liquibase.changelog                      : Reading from public.databasechangelog
+2025-11-07T20:29:16.024+02:00  INFO 21712 --- [Shop] [main] liquibase.util                           : UPDATE SUMMARY
+2025-11-07T20:29:16.024+02:00  INFO 21712 --- [Shop] [main] liquibase.util                           : Run:                          0
+2025-11-07T20:29:16.024+02:00  INFO 21712 --- [Shop] [main] liquibase.util                           : Previously run:              21
+2025-11-07T20:29:16.025+02:00  INFO 21712 --- [Shop] [main] liquibase.util                           : Filtered out:                 0
+2025-11-07T20:29:16.025+02:00  INFO 21712 --- [Shop] [main] liquibase.util                           : -------------------------------
+2025-11-07T20:29:16.025+02:00  INFO 21712 --- [Shop] [main] liquibase.util                           : Total change sets:           21
+2025-11-07T20:29:16.025+02:00  INFO 21712 --- [Shop] [main] liquibase.util                           : Update summary generated
+2025-11-07T20:29:16.026+02:00  INFO 21712 --- [Shop] [main] liquibase.command                        : Command execution complete
+2025-11-07T20:29:16.882+02:00  INFO 21712 --- [Shop] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-11-07T20:29:16.933+02:00  INFO 21712 --- [Shop] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.26.Final
+2025-11-07T20:29:16.961+02:00  INFO 21712 --- [Shop] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-11-07T20:29:17.192+02:00  INFO 21712 --- [Shop] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-11-07T20:29:17.263+02:00  INFO 21712 --- [Shop] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 17.6
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-11-07T20:29:17.996+02:00  INFO 21712 --- [Shop] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-11-07T20:29:17.998+02:00  INFO 21712 --- [Shop] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-11-07T20:29:18.539+02:00  WARN 21712 --- [Shop] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-11-07T20:29:18.751+02:00  INFO 21712 --- [Shop] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name userDetailServiceImpl
+2025-11-07T20:29:19.082+02:00  WARN 21712 --- [Shop] [main] o.s.b.a.f.FreeMarkerAutoConfiguration    : Cannot find template location: [classpath:/templates/] (please add some templates, check your FreeMarker configuration, or set spring.freemarker.check-template-location=false)
+2025-11-07T20:29:19.161+02:00  INFO 21712 --- [Shop] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/api'
+2025-11-07T20:29:19.169+02:00  INFO 21712 --- [Shop] [main] ait.shop.Shop51Application               : Started Shop51Application in 5.901 seconds (process running for 9.776)
+2025-11-07T20:35:21.795+02:00  INFO 21712 --- [Shop] [http-nio-8080-exec-3] o.a.c.c.C.[Tomcat].[localhost].[/api]    : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-11-07T20:35:21.795+02:00  INFO 21712 --- [Shop] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-11-07T20:35:21.797+02:00  INFO 21712 --- [Shop] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
